@@ -78,6 +78,18 @@ p{
     color: white;
 }
 
+.bg-mb{
+    background-color: rgb(138, 176, 171);
+}
+
+.bg-eb{
+    background-color: rgb(26, 29, 26);
+}
+
+.black{
+    color: black;
+}
+
 h4{
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: black;
