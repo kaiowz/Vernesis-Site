@@ -27,8 +27,12 @@
 .block-creatures{
     border-radius: 20px;
     margin: 0 auto;
-    background-color: rgb(205,92,92);
+    background-color:#CD5C5C;
     opacity: 0.9;
+}
+
+.block-creatures:hover {
+    background-color: #B22222;
 }
 
 .block-urianos{
@@ -38,11 +42,19 @@
     opacity: 0.9;
 }
 
+.block-urianos:hover {
+    background-color: #2E8B57;
+}
+
 .block-nidlebens{
     border-radius: 20px;
     margin: 0 auto;
     background-color: #87CEFA;
     opacity: 0.9;
+}
+
+.block-nidlebens:hover {
+    background-color: #00BFFF;
 }
 
 .block-kaoenses{
@@ -52,18 +64,30 @@
     opacity: 0.9;
 }
 
+.block-kaoenses:hover {
+    background-color: #CD853F;
+}
+
 .block-nohitas{
     border-radius: 20px;
     margin: 0 auto;
-    background-color: rgb(0,128,128);
+    background-color: #20B2AA;
     opacity: 0.9;
+}
+
+.block-nohitas:hover {
+    background-color: #008080;
 }
 
 .block-silverwater{
     border-radius: 20px;
     margin: 0 auto;
-    background-color: rgb(70,130,180);
+    background-color: #6495ED;
     opacity: 0.9;
+}
+
+.block-silverwater:hover {
+    background-color: #4169E1;
 }
 
 
