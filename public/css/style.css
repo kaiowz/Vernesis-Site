@@ -141,6 +141,11 @@ text{
     font-weight: bolder;
 }
 
+.text-noh{
+    color: #20B2AA;
+    font-weight: bolder;
+}
+
 .red{
     color: #CD5C5C ;
 }

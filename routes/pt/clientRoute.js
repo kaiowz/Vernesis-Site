@@ -24,4 +24,8 @@ router.get("/kaus", (req, res) => {
     res.render("pt/kaus")
 })
 
+router.get("/noh", (req, res) => {
+    res.render("pt/noh")
+})
+
 module.exports = router
