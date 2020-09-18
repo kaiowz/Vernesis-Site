@@ -1,23 +1,27 @@
 const router = require("express").Router()
 
-router.get("/eng", (req, res) => {
+router.get("/", (req, res) => {
     res.render("eng/index")
 })
 
-router.get("/eng/about", (req, res) => {
+router.get("/about", (req, res) => {
     res.render("eng/about")
 })
 
-router.get("/eng/world", (req, res) => {
+router.get("/world", (req, res) => {
     res.render("eng/world")
 })
 
-router.get("/eng/uria", (req, res) => {
+router.get("/uria", (req, res) => {
     res.render("eng/uria")
 })
 
-router.get("/eng/nidheim", (req, res) => {
+router.get("/nidheim", (req, res) => {
     res.render("eng/nidheim")
+})
+
+router.get("/kaus", (req, res) => {
+    res.render("eng/kaus")
 })
 
 module.exports = router

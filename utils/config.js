@@ -12,8 +12,8 @@ server.use(bodyParser.json())
 //EJS
 server.set("view engine", "ejs")
 
-server.use("/", ptClient)
-server.use("/", engClient)
+server.use("/pt", ptClient)
+server.use("/eng", engClient)
 
 server.use((req, res, next) => {
     /*res.locals.msgSuccess = req.flash("msgSuccess")
