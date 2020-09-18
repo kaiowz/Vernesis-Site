@@ -16,4 +16,8 @@ router.get("/eng/uria", (req, res) => {
     res.render("eng/uria")
 })
 
+router.get("/eng/nidheim", (req, res) => {
+    res.render("eng/nidheim")
+})
+
 module.exports = router

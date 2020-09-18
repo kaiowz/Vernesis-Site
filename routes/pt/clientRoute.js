@@ -16,4 +16,8 @@ router.get("/pt/uria", (req, res) => {
     res.render("pt/uria")
 })
 
+router.get("/pt/nidheim", (req, res) => {
+    res.render("pt/nidheim")
+})
+
 module.exports = router

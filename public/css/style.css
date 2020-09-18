@@ -41,7 +41,7 @@
 .block-nidlebens{
     border-radius: 20px;
     margin: 0 auto;
-    background-color: rgb(135,206,250);
+    background-color: #87CEFA;
     opacity: 0.9;
 }
 
@@ -80,6 +80,11 @@ p{
 
 .text-uria{
     color: #3CB371;
+    font-weight: bolder;
+}
+
+.text-nidheim{
+    color: #87CEFA;
     font-weight: bolder;
 }
 
