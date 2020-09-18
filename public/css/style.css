@@ -34,7 +34,7 @@
 .block-urianos{
     border-radius: 20px;
     margin: 0 auto;
-    background-color: rgb(60,179,113);
+    background-color: #3CB371;
     opacity: 0.9;
 }
 
@@ -75,6 +75,11 @@ p{
 
 .text-vernesis{
     color: #4B0082;
+    font-weight: bolder;
+}
+
+.text-uria{
+    color: #3CB371;
     font-weight: bolder;
 }
 

@@ -12,4 +12,8 @@ router.get("/eng/world", (req, res) => {
     res.render("eng/world")
 })
 
+router.get("/eng/uria", (req, res) => {
+    res.render("eng/uria")
+})
+
 module.exports = router
