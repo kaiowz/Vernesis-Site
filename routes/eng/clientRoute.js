@@ -28,4 +28,8 @@ router.get("/noh", (req, res) => {
     res.render("eng/noh")
 })
 
+router.get("/silverwater", (req, res) => {
+    res.render("eng/silverwater")
+})
+
 module.exports = router
