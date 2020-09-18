@@ -8,4 +8,8 @@ router.get("/pt/sobre", (req, res) => {
     res.render("pt/sobre")
 })
 
+router.get("/pt/mundo", (req, res) => {
+    res.render("pt/mundo")
+})
+
 module.exports = router

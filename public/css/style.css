@@ -73,6 +73,15 @@ p{
     color: rgb(17, 17, 17);
 }
 
+.text-vernesis{
+    color: #4B0082;
+    font-weight: bolder;
+}
+
+.red{
+    color: #CD5C5C ;
+}
+
 .white{
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: white;
