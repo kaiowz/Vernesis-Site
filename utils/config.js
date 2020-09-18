@@ -1,7 +1,7 @@
 const express = require("express")
 const bodyParser =  require("body-parser")
 const server = express()
-const ptClient = require("../routes/pt-br/clientRoute")
+const ptClient = require("../routes/pt/clientRoute")
 const engClient = require("../routes/eng/clientRoute")
 const admin = require("../routes/adminRoute")
 

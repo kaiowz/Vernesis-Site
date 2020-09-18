@@ -1,7 +1,7 @@
 const router = require("express").Router()
 
-router.get("/pt-br", (req, res) => {
-    res.render("pt-br/index")
+router.get("/pt", (req, res) => {
+    res.render("pt/index")
 })
 
 module.exports = router
