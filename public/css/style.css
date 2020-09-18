@@ -90,12 +90,25 @@
     background-color: #4169E1;
 }
 
+/**BOTAO**/
+.btn-vernesis{
+    background-color: #8A2BE2;
+    color: white;
+}
+
+.btn-vernesis:hover{
+    background-color: #4B0082;
+    color: white;
+
+}
 
 /**FONTES**/
 p{
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: rgb(17, 17, 17);
 }
+
+
 
 h5{
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
