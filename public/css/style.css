@@ -185,8 +185,6 @@ p{
     color: rgb(17, 17, 17);
 }
 
-
-
 h5{
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: rgb(17, 17, 17);
@@ -261,4 +259,8 @@ h1{
 a{
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: white
+}
+
+a:hover{
+    color: #26413C;
 }
