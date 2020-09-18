@@ -15,6 +15,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "nodemon index",
+    "prestart": "npm i",
     "start": "node index"
   },
   "author": "Kaio Borges",
