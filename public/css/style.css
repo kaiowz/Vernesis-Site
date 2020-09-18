@@ -31,9 +31,10 @@
     opacity: 0.9;
 }
 
+/**
 .block-creatures:hover {
     background-color: #B22222;
-}
+}**/
 
 .block-urianos{
     border-radius: 20px;
