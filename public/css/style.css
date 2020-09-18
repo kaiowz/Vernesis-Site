@@ -1,0 +1,25 @@
+.body{
+    background-image: url("/uploads/vernesislogo.png");
+    background-position: 50% 50% !important;
+	background-size: cover !important;
+	background-color: transparent !important;
+	background-attachment: fixed !important;
+}
+
+.cb{
+    background-color: white;
+    margin: 0 auto;
+	width: 976px;
+    padding: 0 20px 0 26px;
+    border-radius: 100px;
+	border-top-left-radius: 40px;
+	border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 8px solid #4B0082;
+    opacity: 0.98;
+}
+
+.bg-vernesis{
+    background-color: #4B0082;
+}
