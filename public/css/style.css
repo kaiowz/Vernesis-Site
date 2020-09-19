@@ -264,3 +264,9 @@ a{
 a:hover{
     color: #26413C;
 }
+
+footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+}

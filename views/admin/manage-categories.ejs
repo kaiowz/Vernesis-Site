@@ -1,0 +1,62 @@
+<%- include ("../partials/header.ejs") %>
+<%- include ("../partials/ptnavbar.ejs") %>
+<body class = "body">  
+    <div class="container cb mt-2 mb-2">
+  
+      <h1 class="mt-4 mb-3">Admin
+        <small>Gerenciar Categorias</small>
+      </h1>
+  
+      <ol class="breadcrumb bg-mb">
+        <li class="breadcrumb-item">
+          <a href="/pt">Início</a>
+        </li>
+        <li class="breadcrumb-item">Admin</li>
+        <li class="breadcrumb-item active">Gerenciar Categorias</li>
+      </ol>
+      
+      <div class="container">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nome PT</th>
+                <th scope="col">Nome ENG</th>
+                <th scope="col">Slug PT</th>
+                <th scope="col">Slug ENG</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% categories.forEach(category => {%>
+                    <tr>
+                        <td><%=category.title_pt %></td>
+                        <td><%=category.title_eng %></td>
+                        <td><%= category.slug_pt %></td>
+                        <td><%= category.slug_eng %></td>
+                        <td>
+                            <button class="btn btn-warning">Editar</button>
+                            <form method="POST" action="/admin/category/delete" style="display: inline;" onsubmit="confirmDelete(event, this)">
+                                <input type="hidden" name="id" value="<%= category._id %>">
+                                <button class="btn btn-danger">Deletar</button>
+                            </form>
+                        </td>
+                      </tr>
+                  <%})%>
+            </tbody>
+          </table>
+      </div>
+    </div>
+    <!-- /.container -->
+</body>
+
+<%- include ("../partials/footer.ejs") %>
+
+<script>
+    function confirmDelete(event, form){
+        event.preventDefault();
+        var decision = confirm("Você quer deletar essa categoria?")
+        if (decision){
+            form.submit()
+        }
+    }
+</script>

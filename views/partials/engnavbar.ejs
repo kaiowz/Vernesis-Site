@@ -28,7 +28,7 @@
             <i class="fas fa-newspaper"></i> News
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-            <% categories.forEach (function(category) {%>
+            <% categories.forEach(category => {%>
               <a class="dropdown-item" href="/pt/<%= category.slug_eng %>"><%=category.title_eng %></a>
             <%})%>
           </div>

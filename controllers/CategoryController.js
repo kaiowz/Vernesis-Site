@@ -20,7 +20,9 @@ class CategoryController{
                 return
             }else{
                 var slug_pt = slugify(req.body.title_pt)
+                slug_pt = slug_pt.toLowerCase()
                 var slug_eng = slugify(req.body.title_eng)
+                slug_eng = slug_eng.toLowerCase()
                 var newCategory = {
                     title_pt: req.body.title_pt,
                     title_eng: req.body.title_eng,
@@ -45,10 +47,23 @@ class CategoryController{
         var categories = []
         if (lang == "pt"){
             categories = await database.Category.find().select("title_pt slug_pt")
-        }else{
+        }else if (lang =="eng"){
             categories = await database.Category.find().select("title_eng slug_eng")
+        }else{
+            categories = await database.Category.find()
         }
         return categories
+    }
+
+    async Delete(req, res){
+        var id = req.body.id
+        if (id != undefined){
+            database.Category.findByIdAndDelete(id).then(() =>{
+                res.redirect("/admin")
+            })
+        }else{
+            res.redirect("/admin")
+        }
     }
 }
 
