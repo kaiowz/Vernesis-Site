@@ -1,0 +1,50 @@
+<%- include ("../partials/header.ejs") %>
+<%- include ("../partials/ptnavbar.ejs") %>
+<body class = "body">  
+    <div class="container cb mt-2 mb-2">
+  
+      <h1 class="mt-4 mb-3">Admin
+        <small>Novo Artigo</small>
+      </h1>
+  
+      <ol class="breadcrumb bg-mb">
+        <li class="breadcrumb-item">
+          <a href="/pt" class="text-decoration-none">Início</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="/admin" class="text-decoration-none">Admin</a>
+          </li>
+        <li class="breadcrumb-item active">Novo Artigo</li>
+      </ol>
+      
+      <form method="POST" action="/admin/article/novo">
+        <label>Titulo:</label>
+        <input type="text" class="form-control mb-2" name="title">
+
+        <label>Categoria:</label>
+        <select class="form-control mb-2" name=category_id>
+            <% categories.forEach(category => {%>
+                <option value="<%= category._id %>"> <%= category.title_pt %></option>
+            <%})%>
+        </select>
+
+        <label>Texto:</label>
+        <textarea type="text" class="form-control mb-2" name="body" id="tiny"></textarea><br>
+
+        <button type="submit" class="btn btn-vernesis btn-block mb-4">Enviar</button>
+      </form>
+    </div>
+    <!-- /.container -->
+</body>
+
+<%- include ("../partials/footer.ejs") %>
+
+<script src="/tinymce/tinymce.min.js"></script>
+
+<script>
+    tinymce.init({
+        language: "pt_BR",
+        selector: "#tiny",
+        plugins: ["advlist autolink link image lists preview hr searchplace wordcount fullscreen insertdatetime media save table paste emoticons"]
+    })
+</script>

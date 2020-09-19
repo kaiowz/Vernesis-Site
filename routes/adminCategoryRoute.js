@@ -32,9 +32,4 @@ router.get("/category/:id", async (req, res) => {
 
 router.post("/category/update", CategoryController.update)
 
-router.get("/new-article", async (req, res) => {
-    var categories = await CategoryController.findCategories()
-    res.render("admin/newarticle", {categories: categories})
-})
-
 module.exports = router

@@ -9,10 +9,10 @@
   
       <ol class="breadcrumb bg-mb">
         <li class="breadcrumb-item">
-          <a href="/pt">Início</a>
+          <a href="/pt" class="text-decoration-none">Início</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="/admin">Admin</a>
+            <a href="/admin" class="text-decoration-none">Admin</a>
           </li>
         <li class="breadcrumb-item active">Novo Artigo</li>
       </ol>
@@ -22,7 +22,7 @@
         <input type="text" class="form-control mb-2" name="title">
 
         <label>Categoria:</label>
-        <select class="form-control mb-2" name=categoy_id>
+        <select class="form-control mb-2" name=category_id>
             <% categories.forEach(category => {%>
                 <option value="<%= category._id %>"> <%= category.title_pt %></option>
             <%})%>
@@ -43,6 +43,7 @@
 
 <script>
     tinymce.init({
+        language: "pt_BR",
         selector: "#tiny",
         plugins: ["advlist autolink link image lists preview hr searchplace wordcount fullscreen insertdatetime media save table paste emoticons"]
     })
