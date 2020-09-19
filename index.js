@@ -1,4 +1,4 @@
-const app = require("./utils/config")
+const app = require("./config/config")
 
 app.get("/", (req, res) => {
    res.redirect("/pt")

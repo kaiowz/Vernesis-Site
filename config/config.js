@@ -4,6 +4,7 @@ const server = express()
 const ptClient = require("../routes/pt/clientRoute")
 const engClient = require("../routes/eng/clientRoute")
 const admin = require("../routes/adminRoute")
+const db = require("./database")
 
 //Body Parser
 server.use(bodyParser.urlencoded({ extended: false }))
