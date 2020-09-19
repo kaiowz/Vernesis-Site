@@ -1,4 +1,3 @@
-const mongoose = require("mongoose")
 const slugify = require("slugify")
 const database = require("../config/database")
 const validator = require("../config/validator")

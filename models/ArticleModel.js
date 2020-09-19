@@ -6,6 +6,10 @@ const articleSchema = new Schema({
         type: String,
         required: true
     },
+    lang:{
+        type: String,
+        required: true
+    },
     slug:{
         type: String,
         required: true
