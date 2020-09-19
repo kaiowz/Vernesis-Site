@@ -4,7 +4,7 @@
     <div class="container cb mt-2 mb-2">
   
       <h1 class="mt-4 mb-3">Admin
-        <small>Nova Categoria</small>
+        <small>Editar Categoria</small>
       </h1>
   
       <ol class="breadcrumb bg-mb">
@@ -12,15 +12,17 @@
           <a href="/pt">Início</a>
         </li>
         <li class="breadcrumb-item">Admin</li>
-        <li class="breadcrumb-item active">Nova Categoria</li>
+        <li class="breadcrumb-item active">Editar Categoria</li>
       </ol>
       
-      <form method="POST" action="/admin/category/new">
+      <form method="POST" action="/admin/category/update">
+        <input type="hidden" class="form-control mb-2" name="id" value="<%= category._id %>">
+
         <label>Nome PT:</label>
-        <input type="text" class="form-control mb-2" name="title_pt">
+        <input type="text" class="form-control mb-2" name="title_pt" value="<%= category.title_pt %>">
 
         <label>Nome ENG:</label>
-        <input type="text" class="form-control mb-2" name="title_eng">
+        <input type="text" class="form-control mb-2" name="title_eng" value="<%= category.title_pt %>">
         <button type="submit" class="btn btn-vernesis btn-block mb-4">Enviar</button>
       </form>
 

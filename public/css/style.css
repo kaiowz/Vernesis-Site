@@ -3,7 +3,7 @@
     background-position: 50% 50% !important;
 	background-size: cover !important;
 	background-color: transparent !important;
-	background-attachment: fixed !important;
+    background-attachment: fixed !important;
 }
 
 .cb{
@@ -261,12 +261,11 @@ a{
     color: white
 }
 
-a:hover{
-    color: #26413C;
+button{
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: white
 }
 
-footer {
-    position:absolute;
-    bottom:0;
-    width:100%;
+a:hover{
+    color: #26413C;
 }

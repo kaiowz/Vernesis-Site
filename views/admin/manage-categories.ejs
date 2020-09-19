@@ -34,10 +34,10 @@
                         <td><%= category.slug_pt %></td>
                         <td><%= category.slug_eng %></td>
                         <td>
-                            <button class="btn btn-warning">Editar</button>
+                            <a href="/admin/category/<%= category._id %>"><button class="btn btn-warning black">Editar</button></a>
                             <form method="POST" action="/admin/category/delete" style="display: inline;" onsubmit="confirmDelete(event, this)">
                                 <input type="hidden" name="id" value="<%= category._id %>">
-                                <button class="btn btn-danger">Deletar</button>
+                                <button class="btn btn-danger black">Deletar</button>
                             </form>
                         </td>
                       </tr>
