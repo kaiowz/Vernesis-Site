@@ -32,5 +32,9 @@ router.get("/silverwater", (req, res) => {
     res.render("pt/silverwater")
 })
 
+router.get("/:category", (req, res) => {
+    res.render("pt/blog")
+})
+
 
 module.exports = router
