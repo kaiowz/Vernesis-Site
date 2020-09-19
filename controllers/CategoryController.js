@@ -9,22 +9,24 @@ class CategoryController{
             var errors = []
 
             if (typeof req.body.title_pt == undefined || req.body.title_pt == null || !req.body.title_pt){
-                errors.push({error: "Nome português de categoria inválido! "})
+                errors.push({text: "Nome português de categoria inválido! "})
             }
 
             if (typeof req.body.title_eng == undefined || req.body.title_eng == null || !req.body.title_eng){
-                errors.push({error: "Nome inglês de categoria inválido! "})
+                errors.push({text: "Nome inglês de categoria inválido! "})
             }
 
             var exist = await validator.category_checkIfExist(req.body.title_pt, req.body.title_eng)
 
             if (exist.length > 0){
-                res.json(exist)
+                req.flash("msgError", exist)
+                res.redirect("/admin")
                 return
             }
     
             if (errors.length > 0){
-                res.render("admin/newcategory", {errors: errors})
+                req.flash("msgError", errors)
+                res.redirect("/admin")
                 return
             }else{
                 var slug_pt = slugify(req.body.title_pt)
@@ -39,15 +41,18 @@ class CategoryController{
                 }
                 
                 await database.Category.create(newCategory).then(() =>{
+                    req.flash("msgSuccess", {text: "Categoria criada com sucesso!"})
                     res.redirect("/admin")
                     return
                 }).catch((err) =>{
+                    req.flash("msgSuccess", {text: "Falha ao criar categoria com sucesso!"})
                     res.redirect("/admin")
                     return
                 })
             }
         }catch(e){
-            console.log(e)
+            req.flash("msgSuccess", {text: "Houve um erro interno, tente novamente!"})
+            res.redirect("/admin")
         }
     }
 
@@ -63,7 +68,8 @@ class CategoryController{
             }
             return categories
         }catch(e){
-            console.log(e)
+            req.flash("msgSuccess", {text: "Houve um erro interno, tente novamente!"})
+            res.redirect("/admin")
         }
     }
 
@@ -72,13 +78,16 @@ class CategoryController{
             var id = req.body.id
             if (id != undefined){
                 database.Category.findByIdAndDelete(id).then(() =>{
+                    req.flash("msgSuccess", {text: "Categoria deletada com sucesso!"})
                     res.redirect("/admin")
                 })
             }else{
+                req.flash("msgSuccess", {text: "Falha ao deletar categoria!"})
                 res.redirect("/admin")
             }
         }catch(e){
-            console.log(e)
+            req.flash("msgSuccess", {text: "Houve um erro interno, tente novamente!"})
+            res.redirect("/admin")
         }
     }
 
@@ -86,7 +95,8 @@ class CategoryController{
         try{
             return database.Category.findById(id)
         }catch(e){
-            console.log(e)
+            req.flash("msgSuccess", {text: "Houve um erro interno, tente novamente!"})
+            res.redirect("/admin")
         }
 
     }
@@ -106,12 +116,14 @@ class CategoryController{
             var exist = await validator.category_checkIfExist(req.body.title_pt, req.body.title_eng)
 
             if (exist.length > 0){
-                res.json(exist)
+                req.flash("msgError", exist)
+                res.redirect("/admin")
                 return
             }
 
             if (errors.length > 0){
-                res.render("admin/newcategory", {errors: errors})
+                req.flash("msgError", errors)
+                res.redirect("/admin")
                 return
             }else{
                 var slug_pt = slugify(req.body.title_pt)
@@ -126,15 +138,18 @@ class CategoryController{
                 }
                 
                 await database.Category.findByIdAndUpdate(req.body.id, newCategory).then(() =>{
+                    req.flash("msgSuccess", {text: "Categoria atualizada com sucesso!"})
                     res.redirect("/admin")
                     return
                 }).catch((err) =>{
+                    req.flash("msgSuccess", {text: "Falha ao atualizar a categoria sucesso!"})
                     res.redirect("/admin")
                     return
                 })
             }
         }catch(e){
-            console.log(e)
+            req.flash("msgSuccess", {text: "Houve um erro interno, tente novamente!"})
+            res.redirect("/admin")
         }
 
 

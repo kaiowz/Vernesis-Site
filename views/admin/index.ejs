@@ -1,8 +1,9 @@
 <%- include ("../partials/header.ejs") %>
 <%- include ("../partials/ptnavbar.ejs") %>
 <body class = "body">  
+
     <div class="container cb mt-2 mb-2">
-  
+ 
       <h1 class="mt-4 mb-3">Admin
         <small>Painel de Administrador</small>
       </h1>
@@ -14,6 +15,8 @@
         <li class="breadcrumb-item">Admin</li>
         <li class="breadcrumb-item active">Index</li>
       </ol>
+
+      <%- include ("../partials/alert.ejs") %>
       
     <a href="/admin/new-category" class="text-decoration-none"><button class="btn btn-vernesis btn-block mb-4">Criar nova categoria</button></a>
     <a href="/admin/categories" class="text-decoration-none"><button class="btn btn-vernesis btn-block mb-4">Gerenciar categorias</button></a>

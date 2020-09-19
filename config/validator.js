@@ -5,13 +5,13 @@ class Validator{
         var exist = []
         await database.Category.findOne({title_pt: title_pt}).then((category)=>{
             if (category){
-                exist.push({msg: "Nome PT existe! "})
+                exist.push({text: "Nome de Categoria PT existe! "})
             }
 
         })
         await database.Category.findOne({title_eng: title_eng}).then((category)=>{
             if (category){
-                exist.push({msg: "Nome ENG existe! "})
+                exist.push({text: "Nome de Categoria ENG já existe! "})
             }
         })
         return exist
