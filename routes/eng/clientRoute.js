@@ -1,35 +1,48 @@
 const router = require("express").Router()
 
-router.get("/", (req, res) => {
-    res.render("eng/index")
+router.get("/", async (req, res) => {
+    var categories = await Category.findCategories("eng")
+    res.render("eng/index", {categories: categories})
 })
 
-router.get("/about", (req, res) => {
-    res.render("eng/about")
+router.get("/about", async (req, res) => {
+    var categories = await Category.findCategories("eng")
+    res.render("eng/about", {categories: categories})
 })
 
-router.get("/world", (req, res) => {
-    res.render("eng/world")
+router.get("/world", async (req, res) => {
+    var categories = await Category.findCategories("eng")
+    res.render("eng/world", {categories: categories})
 })
 
-router.get("/uria", (req, res) => {
-    res.render("eng/uria")
+router.get("/uria", async (req, res) => {
+    var categories = await Category.findCategories("eng")
+    res.render("eng/uria", {categories: categories})
 })
 
-router.get("/nidheim", (req, res) => {
-    res.render("eng/nidheim")
+router.get("/nidheim", async (req, res) => {
+    var categories = await Category.findCategories("eng")
+    res.render("eng/nidheim", {categories: categories})
 })
 
-router.get("/kaus", (req, res) => {
-    res.render("eng/kaus")
+router.get("/kaus", async (req, res) => {
+    var categories = await Category.findCategories("eng")
+    res.render("eng/kaus", {categories: categories})
 })
 
-router.get("/noh", (req, res) => {
-    res.render("eng/noh")
+router.get("/noh", async (req, res) => {
+    var categories = await Category.findCategories("eng")
+    res.render("eng/noh", {categories: categories})
 })
 
-router.get("/silverwater", (req, res) => {
-    res.render("eng/silverwater")
+router.get("/silverwater", async (req, res) => {
+    var categories = await Category.findCategories("eng")
+    res.render("eng/silverwater", {categories: categories})
+})
+
+router.get("/:category", async (req, res) => {
+    categories = await Category.findCategories("eng")
+    res.render("eng/blog", {categories: categories})
 })
 
 module.exports = router

@@ -2,11 +2,19 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const categorySchema = new Schema({
-    title:{
+    title_pt:{
         type: String,
         required: true
     },
-    slug:{
+    title_eng:{
+        type: String,
+        required: true
+    },
+    slug_pt:{
+        type: String,
+        required: true
+    },
+    slug_eng:{
         type: String,
         required: true
     }

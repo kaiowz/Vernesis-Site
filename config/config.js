@@ -15,6 +15,7 @@ server.set("view engine", "ejs")
 
 server.use("/pt", ptClient)
 server.use("/eng", engClient)
+server.use("/admin", admin)
 
 server.use((req, res, next) => {
     /*res.locals.msgSuccess = req.flash("msgSuccess")

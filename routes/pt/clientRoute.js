@@ -1,40 +1,49 @@
 const router = require("express").Router()
+const Category = require("../../controllers/CategoryController")
 
-router.get("/", (req, res) => {
-    res.render("pt/index")
+router.get("/", async (req, res) => {
+    categories = await Category.findCategories("pt")
+    res.render("pt/index", {categories: categories})
 })
 
-router.get("/sobre", (req, res) => {
-    res.render("pt/sobre")
+router.get("/sobre", async (req, res) => {
+    categories = await Category.findCategories("pt")
+    res.render("pt/sobre", {categories: categories})
 })
 
-router.get("/mundo", (req, res) => {
-    res.render("pt/mundo")
+router.get("/mundo", async (req, res) => {
+    categories = await Category.findCategories("pt")
+    res.render("pt/mundo", {categories: categories})
 })
 
-router.get("/uria", (req, res) => {
-    res.render("pt/uria")
+router.get("/uria", async (req, res) => {
+    categories = await Category.findCategories("pt")
+    res.render("pt/uria", {categories: categories})
 })
 
-router.get("/nidheim", (req, res) => {
-    res.render("pt/nidheim")
+router.get("/nidheim", async (req, res) => {
+    categories = await Category.findCategories("pt")
+    res.render("pt/nidheim", {categories: categories})
 })
 
-router.get("/kaus", (req, res) => {
-    res.render("pt/kaus")
+router.get("/kaus", async (req, res) => {
+    categories = await Category.findCategories("pt")
+    res.render("pt/kaus", {categories: categories})
 })
 
-router.get("/noh", (req, res) => {
-    res.render("pt/noh")
+router.get("/noh", async (req, res) => {
+    categories = await Category.findCategories("pt")
+    res.render("pt/noh", {categories: categories})
 })
 
-router.get("/silverwater", (req, res) => {
-    res.render("pt/silverwater")
+router.get("/silverwater", async (req, res) => {
+    categories = await Category.findCategories("pt")
+    res.render("pt/silverwater", {categories: categories})
 })
 
-router.get("/:category", (req, res) => {
-    res.render("pt/blog")
+router.get("/:category", async (req, res) => {
+    categories = await Category.findCategories("pt")
+    res.render("pt/blog", {categories: categories})
 })
-
 
 module.exports = router

@@ -4,7 +4,7 @@
     <div class="container cb mt-2 mb-2">
   
       <h1 class="mt-4 mb-3">Admin
-        <small>Nova Categoria</small>
+        <small>Painel de Administrador</small>
       </h1>
   
       <ol class="breadcrumb bg-mb">
@@ -12,17 +12,10 @@
           <a href="/pt">Início</a>
         </li>
         <li class="breadcrumb-item">Admin</li>
-        <li class="breadcrumb-item active">Nova Categoria</li>
+        <li class="breadcrumb-item active">Index</li>
       </ol>
       
-      <form method="POST" action="/admin/category">
-        <label>Nome PT:</label>
-        <input type="text" class="form-control mb-2" name="title_pt">
-
-        <label>Nome ENG:</label>
-        <input type="text" class="form-control mb-2" name="title_eng">
-        <button type="submit" class="btn btn-vernesis btn-block mb-4">Enviar</button>
-      </form>
+    <a href="/admin/new-category" class="text-decoration-none"><button class="btn btn-vernesis btn-block mb-4">Criar nova categoria</button></a>
 
   
     </div>
