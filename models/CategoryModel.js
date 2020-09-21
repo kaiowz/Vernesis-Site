@@ -6,7 +6,7 @@ const categorySchema = new Schema({
         type: String,
         required: true
     },
-    title_eng:{
+    title_en:{
         type: String,
         required: true
     },
@@ -14,7 +14,7 @@ const categorySchema = new Schema({
         type: String,
         required: true
     },
-    slug_eng:{
+    slug_en:{
         type: String,
         required: true
     }

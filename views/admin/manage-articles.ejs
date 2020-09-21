@@ -1,0 +1,75 @@
+<%- include ("../partials/header.ejs") %>
+<%- include ("../partials/ptnavbar.ejs") %>
+<body class = "body">  
+    <div class="container cb mt-2 mb-2">
+  
+      <h1 class="mt-4 mb-3">Admin
+        <small>Gerenciar Artigo</small>
+      </h1>
+  
+      <ol class="breadcrumb bg-mb">
+        <li class="breadcrumb-item">
+          <a href="/pt" class="text-decoration-none">Início</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="/admin" class="text-decoration-none">Admin</a>
+        </li>
+        <li class="breadcrumb-item active">Gerenciar Artigo</li>
+      </ol>
+
+      
+      <%- include ("../partials/alert.ejs") %>
+      
+      <div class="container">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Lingua</th>
+                <th scope="col">Slug</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% articles.forEach(article => {%>
+                    <tr>
+                        <td><%= article.title %></td>
+                        <td><%= article.lang %></td>
+                        <td><%= article.slug %></td>
+                        <% if (article.lang == "pt") {%>
+                            <td>
+                                <%= article.category_id.title_pt %>
+                            </td>
+                        <%}else{%>
+                            <td>
+                                <%= article.category_id.title_en %>
+                            </td>
+                        <%}%>
+                        <td>
+                            <a href="/admin/article/<%= article._id %>"><button class="btn btn-warning black">Editar</button></a>
+                            <form method="POST" action="/admin/article/delete" style="display: inline;" onsubmit="confirmDelete(event, this)">
+                                <input type="hidden" name="id" value="<%= article._id %>">
+                                <button class="btn btn-danger black">Deletar</button>
+                            </form>
+                        </td>
+                      </tr>
+                  <%})%>
+            </tbody>
+          </table>
+      </div>
+    </div>
+    <!-- /.container -->
+</body>
+
+<%- include ("../partials/footer.ejs") %>
+
+<script>
+    function confirmDelete(event, form){
+        event.preventDefault();
+        var decision = confirm("Você quer deletar esse artigo?")
+        if (decision){
+            form.submit()
+        }
+    }
+</script>

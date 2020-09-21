@@ -18,7 +18,15 @@ class Validator{
     }
 
     async input(obj){
-        if (obj.title_pt.includes("<script>") || obj.title_en.includes("<script>")){
+        if (obj.title_pt.includes("<script>") || obj.title_en.includes("<script>") || obj.link_img.includes("<script>")){
+            return true
+        }else{
+            return false
+        }
+    }
+
+    async edit_input(obj){
+        if (obj.title.includes("<script>") || obj.lang.includes("<script") || obj.link_img.includes("<script>")){
             return true
         }else{
             return false

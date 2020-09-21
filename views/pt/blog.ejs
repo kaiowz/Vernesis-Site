@@ -4,46 +4,44 @@
     <div class="container cb mt-2 mb-2">
   
       <h1 class="mt-4 mb-3">Notícias
-        <small>Categoria</small>
+        <small></small>
       </h1>
   
       <ol class="breadcrumb bg-mb">
         <li class="breadcrumb-item">
-          <a href="index.html">Início</a>
+          <a href="index.html" class="text-decoration-none">Início</a>
         </li>
         <li class="breadcrumb-item">Notícias</li>
-        <li class="breadcrumb-item active">Categoria</li>
+        <li class="breadcrumb-item active"><%= category %></li>
       </ol>
   
       <!-- Blog Post -->
-      <div class="card mb-4">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-lg-6">
-              <a href="#">
-                <img class="img-fluid rounded" src="http://placehold.it/750x300" alt="Responsive image">
-              </a>
-            </div>
-            <div class="col-lg-6">
-              <h2 class="card-title">Post Title</h2>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-              <a href="#" class="btn btn-primary">Read More &rarr;</a>
+      <div class="row">
+
+      <% articles.forEach(article => { %>
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100 text-center">
+            <a href="/pt/<%= article.category_id.slug_pt %>/<%= article.slug %>">
+              <img class="img-fluid rounded" src="<%= article.link_img %>" alt="Responsive image">
+            </a>
+            <div class="card-body">
+              <h3 class="card-title"><%= article.title %></h3>
+              <p id="truncated"><%- article.body.substring(0, 100) + "..." %></p>
+              <a href="/pt/<%= article.category_id.slug_pt %>/<%= article.slug %>" class="btn btn-vernesis btn-block">Ler &rarr;</a>
             </div>
           </div>
         </div>
-        <div class="card-footer text-muted">
-          Posted on January 1, 2017 by
-          Start Bootstrap
-        </div>
-      </div>
-  
+      <%})%>
+              
+    </div>
+
       <!-- Pagination -->
       <ul class="pagination justify-content-center mb-4">
         <li class="page-item">
-          <a class="page-link" href="#">&larr; Older</a>
+          <a class="page-link" href="#">&larr; Antigos</a>
         </li>
-        <li class="page-item disabled">
-          <a class="page-link" href="#">Newer &rarr;</a>
+        <li class="page-item">
+          <a class="page-link" href="#">Recentes &rarr;</a>
         </li>
       </ul>
   

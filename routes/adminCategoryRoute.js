@@ -26,7 +26,7 @@ router.post("/category/delete", CategoryController.delete)
 //EDITAR CATEGORIA
 router.get("/category/:id", async (req, res) => {
     var categories = await CategoryController.findCategories("pt")
-    var category = await CategoryController.findByInd(req.params.id)
+    var category = await CategoryController.findByID(req.params.id)
     res.render("admin/editcategory", {categories: categories, category: category})
 })
 

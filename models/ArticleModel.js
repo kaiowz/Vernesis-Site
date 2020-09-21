@@ -10,6 +10,10 @@ const articleSchema = new Schema({
         type: String,
         required: true
     },
+    link_img: {
+        type: String,
+        required: true
+    },
     slug:{
         type: String,
         required: true

@@ -1,4 +1,6 @@
-const router = require("express").Router()
+const router = require("express").Router() 
+const Category = require("../../controllers/CategoryController")
+const Article = require("../../controllers/ArticleController")
 
 router.get("/", async (req, res) => {
     var categories = await Category.findCategories("eng")
@@ -41,8 +43,10 @@ router.get("/silverwater", async (req, res) => {
 })
 
 router.get("/:category", async (req, res) => {
-    categories = await Category.findCategories("eng")
-    res.render("eng/blog", {categories: categories})
+    var categories = await Category.findCategories("pt")
+    var articles = await Article.findEnArticles(req.params.category)
+    var category = await Category.getEnCategoryName(req.params.category)
+    res.render("en/blog", {categories: categories, articles: articles, category: category})
 })
 
 module.exports = router

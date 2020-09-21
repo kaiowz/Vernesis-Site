@@ -20,13 +20,11 @@ class CategoryController{
             if (exist.length > 0){
                 req.flash("msgError", exist)
                 res.redirect("/admin")
-                return
             }
     
             if (errors.length > 0){
                 req.flash("msgError", errors)
                 res.redirect("/admin")
-                return
             }else{
                 var slug_pt = slugify(req.body.title_pt)
                 slug_pt = slug_pt.toLowerCase()
@@ -42,11 +40,9 @@ class CategoryController{
                 await database.Category.create(newCategory).then(() =>{
                     req.flash("msgSuccess", {text: "Categoria criada com sucesso!"})
                     res.redirect("/admin")
-                    return
                 }).catch((err) =>{
-                    req.flash("msgSuccess", {text: "Falha ao criar categoria com sucesso!"})
+                    req.flash("msgError", {text: "Falha ao criar categoria com sucesso!"})
                     res.redirect("/admin")
-                    return
                 })
             }
         }catch(e){
@@ -81,7 +77,7 @@ class CategoryController{
                     res.redirect("/admin")
                 })
             }else{
-                req.flash("msgSuccess", {text: "Falha ao deletar categoria!"})
+                req.flash("msgError", {text: "Falha ao deletar categoria!"})
                 res.redirect("/admin")
             }
         }catch(e){
@@ -90,14 +86,18 @@ class CategoryController{
         }
     }
 
-    async findByInd(id){
-        try{
-            return database.Category.findById(id)
-        }catch(e){
-            req.flash("msgError", {text: "Houve um erro interno, tente novamente!"})
-            res.redirect("/admin")
-        }
+    async findByID(id){
+        return database.Category.findById(id)
+    }
 
+    async getPtCategoryName(slug){
+        var category = await database.Category.findOne({slug_pt: slug})
+        return category.title_pt
+    }
+
+    async getEnCategoryName(slug){
+        var category = await database.Category.findOne({slug_en: slug})
+        return category.title_en
     }
 
     async update(req, res){
@@ -117,21 +117,19 @@ class CategoryController{
             if (exist.length > 0){
                 req.flash("msgError", exist)
                 res.redirect("/admin")
-                return
             }
 
             if (errors.length > 0){
                 req.flash("msgError", errors)
                 res.redirect("/admin")
-                return
             }else{
                 var slug_pt = slugify(req.body.title_pt)
                 slug_pt = slug_pt.toLowerCase()
-                var slug_eng = slugify(req.body.title_eng)
+                var slug_eng = slugify(req.body.title_en)
                 slug_eng = slug_eng.toLowerCase()
                 var newCategory = {
                     title_pt: req.body.title_pt,
-                    title_eng: req.body.title_eng,
+                    title_en: req.body.title_en,
                     slug_pt,
                     slug_eng
                 }
@@ -139,11 +137,9 @@ class CategoryController{
                 await database.Category.findByIdAndUpdate(req.body.id, newCategory).then(() =>{
                     req.flash("msgSuccess", {text: "Categoria atualizada com sucesso!"})
                     res.redirect("/admin")
-                    return
                 }).catch((err) =>{
-                    req.flash("msgSuccess", {text: "Falha ao atualizar a categoria sucesso!"})
+                    req.flash("msgSuccess", {text: "Falha ao atualizar a categoria!"})
                     res.redirect("/admin")
-                    return
                 })
             }
         }catch(e){
