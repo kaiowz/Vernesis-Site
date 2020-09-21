@@ -25,13 +25,14 @@
     <h4 align="center">Artigos</h4>
     <a href="/admin/new-article" class="text-decoration-none"><button class="btn btn-vernesis btn-block mb-4">Criar Artigo</button></a>
     <a href="/admin/articles" class="text-decoration-none"><button class="btn btn-vernesis btn-block mb-4">Gerenciar Artigos</button></a>
-    <% if (session.user.type == "Master"){%>
-      <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block" alt="Responsive image" width="100">
-      <h4 align="center">Usuários</h4>
-      <a href="/admin/register" class="text-decoration-none"><button class="btn btn-vernesis btn-block mb-4">Criar Usuario</button></a>
-      <a href="/admin/users" class="text-decoration-none"><button class="btn btn-vernesis btn-block mb-4">Gerenciar Usuarios</button></a>
-    <%}%>  
-
+    <% if (session.user){%>
+      <% if (session.user.type == "Master"){%>
+        <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block" alt="Responsive image" width="100">
+        <h4 align="center">Usuários</h4>
+        <a href="/admin/register" class="text-decoration-none"><button class="btn btn-vernesis btn-block mb-4">Criar Usuario</button></a>
+        <a href="/admin/users" class="text-decoration-none"><button class="btn btn-vernesis btn-block mb-4">Gerenciar Usuarios</button></a>
+      <%}%>  
+    <%}%>
   
     </div>
     <!-- /.container -->
