@@ -1,23 +1,30 @@
 const bcrypt = require("bcrypt")
 const database = require("../config/database")
+const validator = require("../config/validator")
 
 class UserController{
     async create(req, res){
         try{
-            var {email, password} = req.body
+            var isClear = await validator.login_input(req.body)
 
-            password = await bcrypt.hash(password, 16)
-            var newUser = {
-                email,
-                password
+            if (isClear){
+                res.redirect("/")
+            }else{
+                var {email, password} = req.body
+
+                password = await bcrypt.hash(password, 16)
+                var newUser = {
+                    email,
+                    password
+                }
+                await database.User.create(newUser).then(()=>{
+                    req.flash("msgError", {text: "Usuario criado com sucesso!"})
+                    res.redirect("/admin")
+                }).catch((e)=>{
+                    req.flash("msgError", {text: "Falha ao criar usuario"})
+                    res.redirect("/admin")
+                })
             }
-            await database.User.create(newUser).then(()=>{
-                req.flash("msgError", {text: "Usuario criado com sucesso!"})
-                res.redirect("/admin")
-            }).catch((e)=>{
-                req.flash("msgError", {text: "Falha ao criar usuario"})
-                res.redirect("/admin")
-            })
         }catch{
             req.flash("msgError", {text: "Houve um erro interno, tente novamente!"})
             res.redirect("/admin")

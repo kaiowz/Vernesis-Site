@@ -32,6 +32,14 @@ class Validator{
             return false
         }
     }
+
+    async login_input(obj){
+        if (obj.email.includes("<script") || obj.password.includes("<script>")){
+            return true
+        }else{
+            return false
+        }
+    }
 }
 
 module.exports = new Validator()
