@@ -50,7 +50,7 @@ class CategoryController{
                 })
             }
         }catch(e){
-            req.flash("msgSuccess", {text: "Houve um erro interno, tente novamente!"})
+            req.flash("msgError", {text: "Houve um erro interno, tente novamente!"})
             res.redirect("/admin")
         }
     }
@@ -67,7 +67,7 @@ class CategoryController{
             }
             return categories
         }catch(e){
-            req.flash("msgSuccess", {text: "Houve um erro interno, tente novamente!"})
+            req.flash("msgError", {text: "Houve um erro interno, tente novamente!"})
             res.redirect("/admin")
         }
     }
@@ -85,7 +85,7 @@ class CategoryController{
                 res.redirect("/admin")
             }
         }catch(e){
-            req.flash("msgSuccess", {text: "Houve um erro interno, tente novamente!"})
+            req.flash("msgError", {text: "Houve um erro interno, tente novamente!"})
             res.redirect("/admin")
         }
     }
@@ -94,7 +94,7 @@ class CategoryController{
         try{
             return database.Category.findById(id)
         }catch(e){
-            req.flash("msgSuccess", {text: "Houve um erro interno, tente novamente!"})
+            req.flash("msgError", {text: "Houve um erro interno, tente novamente!"})
             res.redirect("/admin")
         }
 
@@ -147,13 +147,10 @@ class CategoryController{
                 })
             }
         }catch(e){
-            req.flash("msgSuccess", {text: "Houve um erro interno, tente novamente!"})
+            req.flash("msgError", {text: "Houve um erro interno, tente novamente!"})
             res.redirect("/admin")
         }
-
-
     }
-
 }
 
 module.exports = new CategoryController()

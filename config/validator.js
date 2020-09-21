@@ -16,6 +16,14 @@ class Validator{
         })
         return exist
     }
+
+    async input(obj){
+        if (obj.title_pt.includes("<script>") || obj.title_en.includes("<script>")){
+            return true
+        }else{
+            return false
+        }
+    }
 }
 
 module.exports = new Validator()

@@ -7,8 +7,7 @@ router.get("/new-article", async (req, res) => {
     res.render("admin/newarticle", {categories: categories})
 })
 
-router.post("/article/novo", ArticleController.create_pt)
-router.post("/article/new", ArticleController.create_en)
+router.post("/article/new", ArticleController.create)
 
 
 module.exports = router
