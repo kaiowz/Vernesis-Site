@@ -21,7 +21,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "nodemon index",
+    "dev": "nodemon index",
     "prestart": "npm i",
     "start": "node index"
   },
