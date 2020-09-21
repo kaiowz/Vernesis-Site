@@ -243,3 +243,8 @@ button{
 a:hover{
     color: #26413C;
 }
+
+video {
+    width: 100%;
+    height: auto;
+}
