@@ -1,15 +1,9 @@
 function adminAuth(req, res, next){
-    if (req.session.user.type == "Admin" || req.session.user.type == "Master"){
+    if (req.session != undefined){
         next()
-    }else{
+    }else {
         res.redirect("/")
     }
 }
 
-function masterAuth(req, res, next){
-    if (req.session.user.type == "Master"){
-        next()
-    }else{
-        res.redirect("/")
-    }
-}
+module.exports = adminAuth
