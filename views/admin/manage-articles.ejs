@@ -19,13 +19,13 @@
 
       
       <%- include ("../partials/alert.ejs") %>
-      
+      <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block" alt="Responsive image" width="100">
       <div class="container">
         <table class="table">
+          <h4 align="center">Português</h4>
             <thead>
               <tr>
                 <th scope="col">Nome</th>
-                <th scope="col">Lingua</th>
                 <th scope="col">Slug</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">Ações</th>
@@ -33,28 +33,51 @@
             </thead>
             <tbody>
                 <% articles.forEach(article => {%>
+                  <% if (article.lang == "pt") {%>
                     <tr>
-                        <td><%= article.title %></td>
-                        <td><%= article.lang %></td>
-                        <td><%= article.slug %></td>
-                        <% if (article.lang == "pt") {%>
-                            <td>
-                                <%= article.category_id.title_pt %>
-                            </td>
-                        <%}else{%>
-                            <td>
-                                <%= article.category_id.title_en %>
-                            </td>
-                        <%}%>
-                        <td>
-                            <a href="/admin/article/<%= article._id %>"><button class="btn btn-warning black">Editar</button></a>
-                            <form method="POST" action="/admin/article/delete" style="display: inline;" onsubmit="confirmDelete(event, this)">
-                                <input type="hidden" name="id" value="<%= article._id %>">
-                                <button class="btn btn-danger black">Deletar</button>
-                            </form>
-                        </td>
-                      </tr>
+                      <td><%= article.title %></td>
+                      <td><%= article.slug %></td>
+                      <td><%= article.category_id.title_pt %></td>
+                      <td>
+                          <a href="/admin/article/<%= article._id %>"><button class="btn btn-warning black">Editar</button></a>
+                          <form method="POST" action="/admin/article/delete" style="display: inline;" onsubmit="confirmDelete(event, this)">
+                              <input type="hidden" name="id" value="<%= article._id %>">
+                              <button class="btn btn-danger black">Deletar</button>
+                          </form>
+                      </td>
+                    </tr>
+                    <%}%>  
                   <%})%>
+            </tbody>
+          </table>
+          <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block" alt="Responsive image" width="100">
+          <h4 align="center">Inglês</h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Slug</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% articles.forEach(article => {%>
+                  <% if (article.lang == "en") {%>
+                    <tr>
+                      <td><%= article.title %></td>
+                      <td><%= article.slug %></td>
+                      <td><%= article.category_id.title_en %></td>
+                      <td>
+                          <a href="/admin/article/<%= article._id %>"><button class="btn btn-warning black">Editar</button></a>
+                          <form method="POST" action="/admin/article/delete" style="display: inline;" onsubmit="confirmDelete(event, this)">
+                              <input type="hidden" name="id" value="<%= article._id %>">
+                              <button class="btn btn-danger black">Deletar</button>
+                          </form>
+                      </td>
+                    </tr>
+                  <%}%>  
+                <%})%>
             </tbody>
           </table>
       </div>

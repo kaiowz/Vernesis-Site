@@ -16,15 +16,17 @@
         </li>
         <li class="breadcrumb-item active">Gerenciar Categorias</li>
       </ol>
+
+      <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block" alt="Responsive image" width="100">
       
       <div class="container">
         <table class="table">
             <thead>
               <tr>
                 <th scope="col">Nome PT</th>
-                <th scope="col">Nome ENG</th>
+                <th scope="col">Nome EN</th>
                 <th scope="col">Slug PT</th>
-                <th scope="col">Slug ENG</th>
+                <th scope="col">Slug EN</th>
                 <th scope="col">Ações</th>
               </tr>
             </thead>
@@ -32,9 +34,9 @@
                 <% categories.forEach(category => {%>
                     <tr>
                         <td><%=category.title_pt %></td>
-                        <td><%=category.title_eng %></td>
+                        <td><%=category.title_en %></td>
                         <td><%= category.slug_pt %></td>
-                        <td><%= category.slug_eng %></td>
+                        <td><%= category.slug_en %></td>
                         <td>
                             <a href="/admin/category/<%= category._id %>"><button class="btn btn-warning black">Editar</button></a>
                             <form method="POST" action="/admin/category/delete" style="display: inline;" onsubmit="confirmDelete(event, this)">

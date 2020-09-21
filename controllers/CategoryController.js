@@ -11,11 +11,11 @@ class CategoryController{
                 errors.push({text: "Nome português de categoria inválido! "})
             }
 
-            if (typeof req.body.title_eng == undefined || req.body.title_eng == null || !req.body.title_eng){
+            if (typeof req.body.title_en == undefined || req.body.title_en == null || !req.body.title_en){
                 errors.push({text: "Nome inglês de categoria inválido! "})
             }
 
-            var exist = await validator.category_checkIfExist(req.body.title_pt, req.body.title_eng)
+            var exist = await validator.category_checkIfExist(req.body.title_pt, req.body.title_en)
 
             if (exist.length > 0){
                 req.flash("msgError", exist)
@@ -28,20 +28,20 @@ class CategoryController{
             }else{
                 var slug_pt = slugify(req.body.title_pt)
                 slug_pt = slug_pt.toLowerCase()
-                var slug_eng = slugify(req.body.title_eng)
-                slug_eng = slug_eng.toLowerCase()
+                var slug_en = slugify(req.body.title_en)
+                slug_en = slug_en.toLowerCase()
                 var newCategory = {
                     title_pt: req.body.title_pt,
-                    title_eng: req.body.title_eng,
+                    title_en: req.body.title_en,
                     slug_pt,
-                    slug_eng
+                    slug_en
                 }
                 
                 await database.Category.create(newCategory).then(() =>{
                     req.flash("msgSuccess", {text: "Categoria criada com sucesso!"})
                     res.redirect("/admin")
                 }).catch((err) =>{
-                    req.flash("msgError", {text: "Falha ao criar categoria com sucesso!"})
+                    req.flash("msgError", {text: "Falha ao criar categoria!"})
                     res.redirect("/admin")
                 })
             }
@@ -108,11 +108,11 @@ class CategoryController{
                 errors.push({error: "Nome português de categoria inválido! "})
             }
 
-            if (typeof req.body.title_eng == undefined || req.body.title_eng == null || !req.body.title_eng){
+            if (typeof req.body.title_en == undefined || req.body.title_en == null || !req.body.title_en){
                 errors.push({error: "Nome inglês de categoria inválido! "})
             }
 
-            var exist = await validator.category_checkIfExist(req.body.title_pt, req.body.title_eng)
+            var exist = await validator.category_checkIfExist(req.body.title_pt, req.body.title_en)
 
             if (exist.length > 0){
                 req.flash("msgError", exist)
@@ -125,13 +125,13 @@ class CategoryController{
             }else{
                 var slug_pt = slugify(req.body.title_pt)
                 slug_pt = slug_pt.toLowerCase()
-                var slug_eng = slugify(req.body.title_en)
-                slug_eng = slug_eng.toLowerCase()
+                var slug_en = slugify(req.body.title_en)
+                slug_en = slug_en.toLowerCase()
                 var newCategory = {
                     title_pt: req.body.title_pt,
                     title_en: req.body.title_en,
                     slug_pt,
-                    slug_eng
+                    slug_en
                 }
                 
                 await database.Category.findByIdAndUpdate(req.body.id, newCategory).then(() =>{
