@@ -1,17 +1,17 @@
 <%- include ("../partials/header.ejs") %>
-<%- include ("../partials/ptnavbar.ejs") %>
+<%- include ("../partials/ennavbar.ejs") %>
 <body class = "body">  
     <div class="container cb mt-2 mb-2">
   
-      <h1 class="mt-4 mb-3">Notícias
+      <h1 class="mt-4 mb-3">News
         <small></small>
       </h1>
   
       <ol class="breadcrumb bg-mb">
         <li class="breadcrumb-item">
-          <a href="index.html" class="text-decoration-none">Início</a>
+          <a href="index.html" class="text-decoration-none">Home</a>
         </li>
-        <li class="breadcrumb-item">Notícias</li>
+        <li class="breadcrumb-item">News</li>
         <li class="breadcrumb-item active"><%= category %></li>
       </ol>
   
@@ -38,10 +38,10 @@
       <!-- Pagination -->
       <ul class="pagination justify-content-center mb-4">
         <li class="page-item">
-          <a class="page-link" href="#">&larr; Recentes</a>
+          <a class="page-link" href="#">&larr;Newest</a>
         </li>
         <li class="page-item">
-          <a class="page-link" href="#">Antigos &rarr;</a>
+          <a class="page-link" href="#">Older &rarr;</a>
         </li>
       </ul>
   
