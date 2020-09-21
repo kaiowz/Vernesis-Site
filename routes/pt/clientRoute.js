@@ -1,6 +1,7 @@
 const router = require("express").Router()
 const Category = require("../../controllers/CategoryController")
 const Article = require("../../controllers/ArticleController")
+const User = require("../../controllers/UserController")
 
 router.get("/", async (req, res) => {
     var categories = await Category.findCategories("pt")

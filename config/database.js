@@ -6,6 +6,8 @@ require("../models/CategoryModel")
 const Category = mongoose.model("categories")
 require("../models/ArticleModel")
 const Article = mongoose.model("articles")
+require("../models/UserModel")
+const User = mongoose.model("users")
 
 mongoose.Promise = global.Promise
 mongoose.connect(process.env.DB_PATH,
@@ -22,5 +24,6 @@ mongoose.connect(process.env.DB_PATH,
 module.exports = {
     mongoose,
     Category,
-    Article
+    Article,
+    User
 }

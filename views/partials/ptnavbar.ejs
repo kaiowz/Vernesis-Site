@@ -42,7 +42,50 @@
             <a class="dropdown-item" href="/pt">Português</a>
             <a class="dropdown-item" href="/en">Inglês</a>
           </div>
+          <% if (session.user){%>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">
+                <i class="fas fa-users-cog"></i> Admin
+              </a>
+            </li>
+          <%}%>
+
+          <% if (!session.user){%>
+          <a class="nav-link" href="/#" data-toggle="modal" data-target="#loginModal">
+            <i class="fas fa-sign-in-alt"></i>
+          </a>
+          <%}else{%>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/logout">
+                <i class="fas fa-sign-out-alt"></i>
+              </a>
+            </li>
+          <%}%>
         </ul>
       </div>
     </div>
   </nav>
+
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login de Administrador</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form method="POST" action="/admin/auth">
+            <div class="modal-body">
+              <label>E-mail</label>
+              <input type="email" class="form-control" name="email">
+              <label>Senha</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-vernesis btn-block">Entrar</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -180,7 +180,7 @@
 
 /**FONTES**/
 
-h1, h2, h3, h4, h5, h6, p, text, a{
+h1, h2, h3, h4, h5, h6, p, text, a, input, label{
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: rgb(17, 17, 17);
 }

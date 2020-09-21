@@ -1,0 +1,35 @@
+<%- include ("../partials/header.ejs") %>
+<%- include ("../partials/ptnavbar.ejs") %>
+
+<body class="body ">
+    <div class="container cb mt-4 mb-4">
+
+        <h1 class="mt-4 mb-3">Admin
+            <small>Novo Administrador</small>
+        </h1>
+
+        <ol class="breadcrumb bg-mb">
+            <li class="breadcrumb-item">
+              <a href="/pt" class="text-decoration-none">Início</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/admin" class="text-decoration-none">Admin</a>
+              </li>
+            <li class="breadcrumb-item active">Novo Administrador</li>
+          </ol>
+
+        <div class="card mt-2 mb-2">
+            <div class="card-body">
+                <form method="POST" action="/admin/register">
+                      <label>E-mail</label>
+                      <input type="email" class="form-control" name="email">
+                      <label>Senha</label>
+                      <input type="password" class="form-control mb-2" name="password">
+                      <button class="btn btn-block btn-vernesis">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<%- include ("../partials/footer.ejs") %>
