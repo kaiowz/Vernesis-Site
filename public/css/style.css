@@ -94,7 +94,6 @@
     }
 }
 
-
 .bg-vernesis{
     background-color: #4B0082;
 }
@@ -180,17 +179,8 @@
 }
 
 /**FONTES**/
-p{
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    color: rgb(17, 17, 17);
-}
 
-h5{
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    color: rgb(17, 17, 17);
-}
-
-text{
+h1, h2, h3, h4, h5, h6, p, text{
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: rgb(17, 17, 17);
 }
@@ -243,16 +233,6 @@ text{
 }
 
 .black{
-    color: black;
-}
-
-h4{
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    color: black;
-}
-
-h1{
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     color: black;
 }
 

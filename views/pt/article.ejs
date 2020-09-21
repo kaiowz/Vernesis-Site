@@ -1,0 +1,31 @@
+<%- include ("../partials/header.ejs") %>
+<%- include ("../partials/ptnavbar.ejs") %>
+<body class = "body">  
+    <div class="container cb mt-2 mb-2">
+  
+      <h1 class="mt-4 mb-3">Artigo
+        <small><%= article.category_id.title_pt %></small>
+      </h1>
+  
+      <ol class="breadcrumb bg-mb">
+        <li class="breadcrumb-item">
+          <a href="/pt" class="text-decoration-none">Início</a>
+        </li>
+        <li class="breadcrumb-item">Notícias</li>
+        <li class="breadcrumb-item">
+          <a href="/pt/<%=article.category_id.slug_pt %>/1" class="text-decoration-none"><%= article.category_id.title_pt %></a>
+        </li>
+        <li class="breadcrumb-item active"><%= article.title %></li>
+      </ol>
+      
+      <div class="container">
+        <h4 class="card-title" align="center"><%= article.title %></h2>
+        <img class="rounded mx-auto d-block" src="<%= article.link_img %>" alt="">
+        <p class="card-text"><%- article.body%></p>
+      </div>
+
+    </div>
+    <!-- /.container -->
+</body>
+
+<%- include ("../partials/footer.ejs") %>

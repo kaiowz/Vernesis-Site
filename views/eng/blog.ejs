@@ -1,5 +1,5 @@
 <%- include ("../partials/header.ejs") %>
-<%- include ("../partials/ennavbar.ejs") %>
+<%- include ("../partials/engnavbar.ejs") %>
 <body class = "body">  
     <div class="container cb mt-2 mb-2">
   
@@ -9,7 +9,7 @@
   
       <ol class="breadcrumb bg-mb">
         <li class="breadcrumb-item">
-          <a href="index.html" class="text-decoration-none">Home</a>
+          <a href="/en" class="text-decoration-none">Home</a>
         </li>
         <li class="breadcrumb-item">News</li>
         <li class="breadcrumb-item active"><%= category %></li>
@@ -18,31 +18,42 @@
       <!-- Blog Post -->
       <div class="row">
 
-      <% articles.forEach(article => { %>
-        <div class="col-lg-4 mb-4">
-          <div class="card h-100 text-center">
-            <a href="/pt/<%= article.category_id.slug_pt %>/<%= article.slug %>">
-              <img class="img-fluid rounded" src="<%= article.link_img %>" alt="Responsive image">
-            </a>
+        <% result.articles.forEach(article => { %>
+          <div class="card mb-4">
             <div class="card-body">
-              <h3 class="card-title"><%= article.title %></h3>
-              <p id="truncated"><%- article.body.substring(0, 100) + "..." %></p>
-              <a href="/pt/<%= article.category_id.slug_pt %>/<%= article.slug %>" class="btn btn-vernesis btn-block">Ler &rarr;</a>
+              <div class="row">
+                <div class="col-lg-4">
+                  <a href="/en/<%= article.slug%>">
+                    <img class="img-fluid rounded" src="<%= article.link_img %>" alt="Responsive image">
+                  </a>
+                </div>
+                <div class="col-lg-8">
+                  <h2 class="card-title"><%= article.title %></h2>
+                  <p class="card-text"><%- article.body.substring(0, 100) + "..." %></p>
+                  <br>
+                  <br>
+                  <a href="/en/<%= article.slug%>" class="btn btn-vernesis btn-block text-decoration-none">Ler &rarr;</a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      <%})%>
+        <%})%>
               
     </div>
 
       <!-- Pagination -->
       <ul class="pagination justify-content-center mb-4">
-        <li class="page-item">
-          <a class="page-link" href="#">&larr;Newest</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">Older &rarr;</a>
-        </li>
+        <% if (result.page != 1){ %>
+          <li class="page-item">
+            <a class="page-link" href="/pt/<%= result.articles[0].category_id.slug_pt %>/<%=result.page-1%>">&larr; Recentes</a>
+          </li>
+        <%}%>
+
+        <% if (result.next){ %>
+          <li class="page-item">
+            <a class="page-link" href="/pt/<%= result.articles[0].category_id.slug_pt %>/<%=result.page+1%>">Antigos &rarr;</a>
+          </li>
+        <%}%>
       </ul>
   
     </div>

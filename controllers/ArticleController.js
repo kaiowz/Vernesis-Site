@@ -69,26 +69,102 @@ class ArticleController{
         }
     }
 
-    async findPtArticles(category){
-        var articles = await database.Article.find({lang: "pt"}).populate("category_id").sort({_id: -1})
-        var filterArticles = []
-        articles.forEach(article => {
-            if (article.category_id.slug_pt == category){
-                filterArticles.push(article)
+    async findPtArticles(req, res){
+        try{
+            var page = req.params.num
+        
+            var offset
+            if (isNaN(page) || page == 1){
+                offset = 0
+            }else{
+                offset = (parseInt(num) -1) * 6
             }
-        })
-        return filterArticles
+    
+            await database.Article.find({lang: "pt"}).populate("category_id").sort({_id: -1}).limit(6).skip(offset).then(async (articles)  => {
+                var next
+
+                if (offset + 6 >= articles.length){
+                    next = false
+                }else{
+                    next = true
+                }
+
+                var filterArticles = []
+                await articles.forEach(article => {
+                    if (article.category_id.slug_pt == req.params.category){
+                        filterArticles.push(article)
+                    }
+                })
+
+                var result = {
+                    next: next,
+                    articles: filterArticles,
+                    page: page
+                }
+
+                var categories = await CategoryController.findCategories("pt")
+                var category = await CategoryController.getPtCategoryName(req.params.category)
+
+                res.render("pt/blog", {categories: categories, result: result, category: category})
+            }).catch((err) =>{
+                console.log(err)
+                req.flash("msgError", {text: "Houve um erro ao carregar os artigos"})
+                res.redirect("/pt")
+            })
+
+        }catch(e){
+            console.log(e)
+            req.flash("msgError", {text: "Houve um erro interno, tente novamente!"})
+            res.redirect("/pt")
+        }
     }
 
-    async findEnArticles(category){
-        var articles = await database.Article.find({lang: "en"}).populate("category_id").sort({_id: -1})
-        var filterArticles = []
-        articles.forEach(article => {
-            if (article.category_id.slug_pt == category){
-                filterArticles.push(article)
+    async findEnArticles(req, res){
+        try{
+            var page = req.params.num
+        
+            var offset
+            if (isNaN(page) || page == 1){
+                offset = 0
+            }else{
+                offset = (parseInt(num) - 1) * 6
             }
-        })
-        return filterArticles
+    
+            await database.Article.find({lang: "en"}).populate("category_id").sort({_id: -1}).limit(6).skip(offset).then(async (articles)  => {
+                var next
+
+                if (offset + 6 >= articles.length){
+                    next = false
+                }else{
+                    next = true
+                }
+
+                var filterArticles = []
+                await articles.forEach(article => {
+                    if (article.category_id.slug_en == req.params.category){
+                        filterArticles.push(article)
+                    }
+                })
+
+                var result = {
+                    next: next,
+                    articles: filterArticles,
+                    page: page
+                }
+
+                var categories = await CategoryController.findCategories("en")
+                var category = await CategoryController.getPtCategoryName(req.params.category)
+
+                res.render("eng/blog", {categories: categories, category: category, result: result})
+            }).catch((err) =>{
+                req.flash("msgError", {text: "There was an error loading the articles"})
+                res.redirect("/en")
+            })
+
+        }catch(e){
+            req.flash("msgError", {text: "There was an internal error, please try again!"})
+            res.redirect("/en")
+        }
     }
 
     async delete(req, res){
@@ -139,6 +215,26 @@ class ArticleController{
         }catch(e){
             req.flash("msgError", {text: "Houve um erro interno, tente novamente!"})
             res.redirect("/admin")
+        }
+    }
+
+    async getPtArticle(req, res){
+        var categories = await CategoryController.findCategories("pt")
+        var article = await database.Article.findOne({slug: req.params.article}).populate("category_id")
+        if (article){
+            res.render("pt/article", {article: article, categories: categories})
+        }else{
+            res.redirect("/pt")
+        }
+    }
+
+    async getEnArticle(req, res){
+        var categories = await CategoryController.findCategories("en")
+        var article = await database.Article.findOne({slug: req.params.article}).populate("category_id")
+        if (article){
+            res.render("eng/article", {article: article, categories: categories})
+        }else{
+            res.redirect("/en")
         }
     }
 }

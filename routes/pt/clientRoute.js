@@ -42,11 +42,8 @@ router.get("/silverwater", async (req, res) => {
     res.render("pt/silverwater", {categories: categories})
 })
 
-router.get("/:category", async (req, res) => {
-    var categories = await Category.findCategories("pt")
-    var articles = await Article.findPtArticles(req.params.category)
-    var category = await Category.getPtCategoryName(req.params.category)
-    res.render("pt/blog", {categories: categories, articles: articles, category: category})
-})
+router.get("/:category/:num", Article.findPtArticles)
+
+router.get("/:article", Article.getPtArticle)
 
 module.exports = router
