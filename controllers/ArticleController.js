@@ -153,7 +153,7 @@ class ArticleController{
                 }
 
                 var categories = await CategoryController.findCategories("en")
-                var category = await CategoryController.getPtCategoryName(req.params.category)
+                var category = await CategoryController.getEnCategoryName(req.params.category)
 
                 res.render("eng/blog", {categories: categories, category: category, result: result})
             }).catch((err) =>{
