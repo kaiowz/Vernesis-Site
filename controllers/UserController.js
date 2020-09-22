@@ -38,8 +38,6 @@ class UserController{
                 method: "POST"
             }).then((res) => res.json())
 
-            console.log(captchaVerified)
-
             if (captchaVerified.success == true){
                 database.User.findOne({email: req.body.email}).then(async (user) =>{
                     var match = await bcrypt.compare(req.body.password, user.password)

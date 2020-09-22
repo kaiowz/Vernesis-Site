@@ -1,5 +1,5 @@
 <% msgSuccess.forEach(msg => {%>
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-success mt-2" role="alert">
             <%= msg.text %>
             <img src="close.soon" style="display:none;" onerror="(function(el){ setTimeout(function(){ el.parentNode.parentNode.removeChild(el.parentNode); },5000 ); })(this);" />
         </div>
@@ -7,7 +7,7 @@
         
 
 <% msgError.forEach(msg => {%>
-    <div class="alert alert-danger" role="alert" auto-close="1000">
+    <div class="alert alert-danger mt-2" role="alert" auto-close="1000">
         <%= msg.text %>
         <img src="close.soon" style="display:none;" onerror="(function(el){ setTimeout(function(){ el.parentNode.parentNode.removeChild(el.parentNode); },5000 ); })(this);" />
     </div>
