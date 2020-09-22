@@ -1,5 +1,5 @@
 function adminAuth(req, res, next){
-    if (req.session != undefined){
+    if (req.session.user != undefined){
         next()
     }else {
         res.redirect("/")

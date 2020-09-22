@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt")
 const database = require("../config/database")
 const validator = require("../config/validator")
+const fetch = require("node-fetch")
 
 class UserController{
     async create(req, res){
@@ -33,24 +34,37 @@ class UserController{
 
     async login(req, res){
         try{
-            database.User.findOne({email: req.body.email}).then((user) =>{
-                var match = bcrypt.compare(req.body.password, user.password)
-                if (match){
-                    req.session.user = {
-                        email: user.email,
-                        type: user.type
-                    }
-                    res.redirect("/pt")
-                }else{
+            const captchaVerified = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.SERVER_CAPTCHA}&response=${req.body['g-recaptcha-response']}`, {
+                method: "POST"
+            }).then((res) => res.json())
 
-                }
-            }).catch((err) =>{
-                req.flash("msgError", {text: "Houve um erro interno, tente novamente!"})
-                res.redirect("/admin")
-            })
+            console.log(captchaVerified)
+
+            if (captchaVerified.success == true){
+                database.User.findOne({email: req.body.email}).then(async (user) =>{
+                    var match = await bcrypt.compare(req.body.password, user.password)
+                    if (match){
+                        req.session.user = {
+                            email: user.email,
+                            type: user.type
+                        }
+                        res.redirect("/admin")
+                    }else{
+                        req.flash("msgError", {text: "Senha e/ou login inválido!"})
+                        res.redirect("/pt")
+                    }
+                }).catch((err) =>{
+                    req.flash("msgError", {text: "Houve um erro interno, tente novamente!"})
+                    res.redirect("/pt")
+                })
+            }else{
+                req.flash("msgError", {text: "Falha na verificação"})
+                res.redirect("/pt")
+            }
+
         }catch(e){
             req.flash("msgError", {text: "Houve um erro interno, tente novamente!"})
-            res.redirect("/admin")
+            res.redirect("/pt")
         }
     }
 
