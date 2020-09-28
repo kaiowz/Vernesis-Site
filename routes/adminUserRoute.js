@@ -12,6 +12,10 @@ router.post("/register", adminAuth, UserController.create)
 
 router.post("/auth", UserController.login)
 
+router.get("/signin", (req, res) => {
+    res.render("admin/signin")
+})
+
 router.get("/logout", adminAuth, UserController.logout)
 
 router.get("/users", adminAuth, async (req, res) =>{
