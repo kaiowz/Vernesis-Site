@@ -5,7 +5,8 @@ const User = require("../../controllers/UserController")
 
 router.get("/", async (req, res) => {
     var categories = await Category.findCategories("en")
-    res.render("eng/index", {categories: categories})
+    var news = await Article.getNewsArticle("en")
+    res.render("eng/index", {categories: categories, news: news})
 })
 
 router.get("/about", async (req, res) => {

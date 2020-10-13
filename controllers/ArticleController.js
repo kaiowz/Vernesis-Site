@@ -237,6 +237,10 @@ class ArticleController{
             res.redirect("/en")
         }
     }
+
+    async getNewsArticle(lang){
+        return await database.Article.find({lang: lang}).populate("category_id").sort({_id: -1}).limit(3)
+    }
 }
 
 module.exports = new ArticleController()
