@@ -1,12 +1,20 @@
-.body{
-    background-image: url("/uploads/vernesislogo.png");
-    background-position: 50% 50% !important;
-	background-size: cover !important;
-	background-color: transparent !important;
-    background-attachment: fixed !important;
+.body {
+    background-color: #4D7C8A;
 }
 
-.cb{
+nav .navbar-nav a{
+    color: white !important;
+}
+
+nav .navbar-nav a:hover{
+    color: #8A2BE2 !important;    
+}
+
+.navbar .dropdown-menu {
+    background-color: #4B0082 !important;
+}
+
+.cb {
     background-color: white;
     margin: 0 auto;
     width: 1200px;
@@ -20,11 +28,12 @@
 }
 
 @media only screen and (max-device-width: 900px){
-    .cb{
+    .cb {
         background-color: white;
         margin: 0 auto;
         width: 800px;
         padding: 0 20px 0 26px;
+        margin-top: 10px;
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
         border-bottom-left-radius: 40px;
@@ -35,11 +44,12 @@
 }
 
 @media only screen and (max-device-width: 500px){
-    .cb{
+    .cb {
         background-color: white;
         margin: 0 auto;
         width: 400px;
         padding: 0 20px 0 26px;
+        margin-top: 10px;
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
         border-bottom-left-radius: 40px;
@@ -55,6 +65,7 @@
         margin: 0 auto;
         width: 360px;
         padding: 0 20px 0 26px;
+        margin-top: 10px;
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
         border-bottom-left-radius: 40px;
@@ -65,10 +76,11 @@
 }
 
 @media only screen and (max-device-width: 320px){
-    .cb{
+    .cb {
         background-color: white;
         margin: 0 auto;
         width: 290px;
+        margin-top: 10px;
         padding: 0 20px 0 26px;
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
@@ -80,11 +92,12 @@
 }
 
 @media only screen and (max-device-width: 300px){
-    .cb{
+    .cb {
         background-color: white;
         margin: 0 auto;
         width: 300px;
         padding: 0 20px 0 26px;
+        margin-top: 10px;
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
         border-bottom-left-radius: 40px;
