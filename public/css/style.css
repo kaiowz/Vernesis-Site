@@ -376,7 +376,7 @@ img.muted{
 
 @media (max-width: 600px){
     #banner{
-        background-image: url('../uploads/Perfil.png');
+        background-image: url('../uploads/vernesis_mobile.png');
         background-position: center;
         background-size: cover;
     }
