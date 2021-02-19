@@ -1,41 +1,52 @@
 <%- include ("../partials/header.ejs") %>
 <%- include ("../partials/ptnavbar.ejs") %>
-<body class = "body">  
+<body>  
+  <%- include ("../partials/alert.ejs") %>
+  <section class="banner simple">
+    <ol class="breadcrumb bg-mb">
+      <li class="breadcrumb-item">
+        <a href="/pt" class="text-decoration-none">Início</a>
+      </li>
+      <li class="breadcrumb-item active">Admin</li>
+    </ol>
+  </section>
 
-    <div class="container cb mt-2 mb-2">
- 
-      <h1 class="mt-4 mb-3">Admin
-        <small>Painel de Administrador</small>
-      </h1>
-  
-      <ol class="breadcrumb bg-mb">
-        <li class="breadcrumb-item">
-          <a href="/pt" class="text-decoration-none">Início</a>
-        </li>
-        <li class="breadcrumb-item active">Admin</li>
-      </ol>
-
-      <%- include ("../partials/alert.ejs") %>
-    
-    <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block" alt="Responsive image" width="100">
-    <h4 align="center">Categorias</h4>
-    <a href="/admin/new-category" class="text-decoration-none"><button class="btn btn-vernesis btn-block mb-4">Criar nova Categoria</button></a>
-    <a href="/admin/categories" class="text-decoration-none"><button class="btn btn-vernesis btn-block mb-4">Gerenciar Categorias</button></a>
-    <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block" alt="Responsive image" width="100">
-    <h4 align="center">Artigos</h4>
-    <a href="/admin/new-article" class="text-decoration-none"><button class="btn btn-vernesis btn-block mb-4">Criar Artigo</button></a>
-    <a href="/admin/articles" class="text-decoration-none"><button class="btn btn-vernesis btn-block mb-4">Gerenciar Artigos</button></a>
-    <% if (session.user){%>
-      <% if (session.user.type == "Master"){%>
-        <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block" alt="Responsive image" width="100">
-        <h4 align="center">Usuários</h4>
-        <a href="/admin/register" class="text-decoration-none"><button class="btn btn-vernesis btn-block mb-4">Criar Usuario</button></a>
-        <a href="/admin/users" class="text-decoration-none"><button class="btn btn-vernesis btn-block mb-4">Gerenciar Usuarios</button></a>
-      <%}%>  
-    <%}%>
-  
+  <section class="container">
+    <div class="column">
+      <div class="container">
+        <div class="flex-grow-1 p-2">
+          <img src = "/uploads/logopenumbra.png" class="muted rounded mx-auto d-block" alt="Responsive image" width="100">
+          <h4 align="center">Categorias</h4>
+          <div class="d-grid gap-2">
+            <a href="/admin/new-category" class="text-decoration-none btn btn-outline-dark">Criar nova Categoria</a>
+            <a href="/admin/categories" class="text-decoration-none btn btn-outline-dark">Gerenciar Categorias</a>
+          </div>
+        </div>
+        
+        <div class="flex-grow-1 p-2">
+          <img src = "/uploads/logopenumbra.png" class="muted rounded mx-auto d-block" alt="Responsive image" width="100">
+          <h4 align="center">Artigos</h4>
+          <div class="d-grid gap-2">
+            <a href="/admin/new-article" class="text-decoration-none btn btn-outline-dark">Criar Artigo</a>
+            <a href="/admin/articles" class="text-decoration-none btn btn-outline-dark">Gerenciar Artigos</a>
+          </div>
+        </div>
+      </div>
+      
+      <% if (session.user){%>
+        <% if (session.user.type == "Master"){%>
+          <div class="p-4">
+            <img src = "/uploads/logopenumbra.png" class="muted rounded mx-auto d-block" alt="Responsive image" width="100">
+            <h4 align="center">Usuários</h4>
+            <div class="d-grid gap-2">
+              <a href="/admin/register" class="text-decoration-none btn btn-outline-dark">Criar Usuario</a>
+              <a href="/admin/users" class="text-decoration-none btn btn-outline-dark">Gerenciar Usuarios</a>
+            </div>
+          </div>
+        <%}%>  
+      <%}%>
     </div>
-    <!-- /.container -->
+  </section>
 </body>
 
 <%- include ("../partials/footer.ejs") %>

@@ -1,36 +1,42 @@
 <%- include ("../partials/header.ejs") %>
 <%- include ("../partials/ptnavbar.ejs") %>
-<body class = "body">  
-    <div class="container cb mt-2 mb-2">
-  
-      <h1 class="mt-4 mb-3">Admin
-        <small>Editar Categoria</small>
-      </h1>
-  
-      <ol class="breadcrumb bg-mb">
-        <li class="breadcrumb-item">
-          <a href="/pt">Início</a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="/admin">Admin</a>
-          </li>
-        <li class="breadcrumb-item active">Editar Categoria</li>
-      </ol>
+<body>  
+
+  <section class="banner simple">
       
-      <form method="POST" action="/admin/category/update">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/pt" class="text-decoration-none">Início</a>
+      </li>
+      <li class="breadcrumb-item">
+          <a href="/admin" class="text-decoration-none">Admin</a>
+        </li>
+      <li class="breadcrumb-item active">Editar Categoria</li>
+    </ol>
+  </section>
+
+  <section class="container column">
+      
+    <form method="POST" action="/admin/category/new">
+      <div class="column">
         <input type="hidden" class="form-control mb-2" name="id" value="<%= category._id %>">
-
-        <label>Nome PT:</label>
-        <input type="text" class="form-control mb-2" name="title_pt" value="<%= category.title_pt %>">
-
-        <label>Nome EN:</label>
-        <input type="text" class="form-control mb-2" name="title_en" value="<%= category.title_en %>">
-        <button type="submit" class="btn btn-vernesis btn-block mb-4">Enviar</button>
-      </form>
-
+        <label>
+          Nome PT:
+          <input type="text" class="form-control mb-2" name="title_pt" value="<%= category.title_pt %>">
+        </label>
   
-    </div>
-    <!-- /.container -->
-</body>
+        <label>
+          Nome EN:
+          <input type="text" class="form-control mb-2" name="title_en" value="<%= category.title_en %>">
+        </label>
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-outline-dark d-grid">Enviar</button>
+      </div>
+      
+    </form>
 
-<%- include ("../partials/footer.ejs") %>
+
+  </section>
+  <%-include ("../partials/scripts.ejs") %>
+</body>

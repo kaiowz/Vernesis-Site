@@ -1,34 +1,41 @@
 <%- include ("../partials/header.ejs") %>
 <%- include ("../partials/ptnavbar.ejs") %>
-<body class = "body">  
-    <div class="container cb mt-2 mb-2">
-  
-      <h1 class="mt-4 mb-3">Admin
-        <small>Nova Categoria</small>
-      </h1>
-  
-      <ol class="breadcrumb bg-mb">
-        <li class="breadcrumb-item">
-          <a href="/pt" class="text-decoration-none">Início</a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="/admin" class="text-decoration-none">Admin</a>
-          </li>
-        <li class="breadcrumb-item active">Nova Categoria</li>
-      </ol>
+<body>  
+
+  <section class="banner simple">
       
-      <form method="POST" action="/admin/category/new">
-        <label>Nome PT:</label>
-        <input type="text" class="form-control mb-2" name="title_pt">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/pt" class="text-decoration-none">Início</a>
+      </li>
+      <li class="breadcrumb-item">
+          <a href="/admin" class="text-decoration-none">Admin</a>
+        </li>
+      <li class="breadcrumb-item active">Nova Categoria</li>
+    </ol>
+  </section>
 
-        <label>Nome EN:</label>
-        <input type="text" class="form-control mb-2" name="title_en">
-        <button type="submit" class="btn btn-vernesis btn-block mb-4">Enviar</button>
-      </form>
-
+  <section class="container column">
+      
+    <form method="POST" action="/admin/category/new">
+      <div class="column">
+        <label>
+          Nome PT:
+          <input type="text" class="form-control mb-2" name="title_pt">
+        </label>
   
-    </div>
-    <!-- /.container -->
-</body>
+        <label>
+          Nome EN:
+          <input type="text" class="form-control mb-2" name="title_en">
+        </label>
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-outline-dark d-grid">Enviar</button>
+      </div>
+      
+    </form>
 
-<%- include ("../partials/footer.ejs") %>
+
+  </section>
+  <%-include ("../partials/scripts.ejs") %>
+</body>

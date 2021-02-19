@@ -1,64 +1,55 @@
 <%- include ("../partials/header.ejs") %>
 <%- include ("../partials/ptnavbar.ejs") %>
-<body class = "body">  
-    <div class="container cb mt-2 mb-2">
+<body>  
+  <section class="banner simple">
+    <ol class="breadcrumb bg-mb">
+      <li class="breadcrumb-item">
+        <a href="/pt" class="text-decoration-none">Início</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="/admin" class="text-decoration-none">Admin</a>
+      </li>
+      <li class="breadcrumb-item active">Gerenciar Usuários</li>
+    </ol>
+  </section>
   
-      <h1 class="mt-4 mb-3">Admin
-        <small>Gerenciar Usuários</small>
-      </h1>
-  
-      <ol class="breadcrumb bg-mb">
-        <li class="breadcrumb-item">
-          <a href="/pt" class="text-decoration-none">Início</a>
-        </li>
-        <li class="breadcrumb-item">
-          <a href="/admin" class="text-decoration-none">Admin</a>
-        </li>
-        <li class="breadcrumb-item active">Gerenciar Usuários</li>
-      </ol>
-
-      <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block" alt="Responsive image" width="100">
-      
-      <div class="container">
-        <table class="table">
-            <thead>
+  <section class="container column">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Email</th>
+          <th scope="col">Cargo</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+          <% users.forEach(user => {%>
               <tr>
-                <th scope="col">Email</th>
-                <th scope="col">Cargo</th>
-                <th scope="col">Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-                <% users.forEach(user => {%>
-                    <tr>
-                        <td><%= user.email %></td>
-                        <td><%= user.type %></td>
-                        <td>
-                            <% if (user.type == "Admin") {%>
-                            <form method="POST" action="/admin/user" style="display: inline;" onsubmit="confirmDelete(event, this)">
-                                <input type="hidden" name="id" value="<%= user._id %>">
-                                <input type="hidden" name="option" value="Promote">
-                                <button class="btn btn-success black">Promover</button>
-                            </form>
-                            <%}%>
-                            <% if (user.type == "Master") {%>
-                                <form method="POST" action="/admin/user" style="display: inline;" onsubmit="confirmDelete(event, this)">
-                                    <input type="hidden" name="id" value="<%= user._id %>">
-                                    <input type="hidden" name="option" value="Demote">
-                                    <button class="btn btn-danger black">Rebaixar</button>
-                                </form>
-                                <%}%>
-                        </td>
-                      </tr>
-                  <%})%>
-            </tbody>
-          </table>
-      </div>
-    </div>
-    <!-- /.container -->
+                  <td><%= user.email %></td>
+                  <td><%= user.type %></td>
+                  <td>
+                      <% if (user.type == "Admin") {%>
+                      <form method="POST" action="/admin/user" style="display: inline;" onsubmit="confirmDelete(event, this)">
+                          <input type="hidden" name="id" value="<%= user._id %>">
+                          <input type="hidden" name="option" value="Promote">
+                          <button class="btn btn-success black">Promover</button>
+                      </form>
+                      <%}%>
+                      <% if (user.type == "Master") {%>
+                          <form method="POST" action="/admin/user" style="display: inline;" onsubmit="confirmDelete(event, this)">
+                              <input type="hidden" name="id" value="<%= user._id %>">
+                              <input type="hidden" name="option" value="Demote">
+                              <button class="btn btn-danger black">Rebaixar</button>
+                          </form>
+                          <%}%>
+                  </td>
+                </tr>
+            <%})%>
+      </tbody>
+    </table>
+  </section>
+  <%- include ("../partials/scripts.ejs") %>
 </body>
-
-<%- include ("../partials/footer.ejs") %>
 
 <script>
     function confirmDelete(event, form){
