@@ -1,20 +1,26 @@
 <%- include ("../partials/header.ejs") %>
-<%- include ("../partials/engnavbar.ejs") %>
-<body class = "body">
-    <div class = "container cb mt-2 mb-2">
-
-        <ol class = "breadcrumb bg-mb mt-4">
-        <li class = "breadcrumb-item">
-            <a href="/en" class="text-decoration-none"> Home </a>
-        </li>
-        <li class = "breadcrumb-item"> Universe </li>
-        <li class = "breadcrumb-item active"> Kaus </li>
+<body class="body">
+    <header>
+        <%- include ("../partials/ennavbar.ejs") %>
+    </header>
+    <section class="banner simple">
+        <ol class="breadcrumb bg-mb mt-4">
+            <li class="breadcrumb-item">
+                <a href="/en" class="text-decoration-none">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/en/world" class="text-decoration-none">Universe</a>
+            </li>
+            <li class="breadcrumb-item active">Kaus</li>
         </ol>
+    </section>
+
+    <section class="container column">
         <h4 align = "center"> <text class = "text-kaus"> Kaus </text> </h4>
         <p align = "justify"> The power of the stars is, without any shadow of a doubt, a divine gift. Without another appropriate explanation, it becomes evident that the gods, after so many millennia, finally recognized the merits of men and were willing to go against them. Any act less than profound gratitude is blasphemy and a Kaus theocracy must use, without scruples, the gifts bestowed on humanity by the gods, which is his own presence. </p>
         <p align = "justify"> The jackal is the animal that usually digs up bones and keeps them. As well as the same, the citizens of Kaus also intend to “dig up” the stars and specifically with them. If power is present there, it is evidently to be used and to deny it would be nothing more than pure arrogance, since the true humble man is unworthy to refuse something presented by the superior. As a consequence, they will devote themselves; and in service those who deigned to grant what is pure to those who are unworthy. </p>
 
-        <img src = "/uploads/logopenumbra.png" class = "rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
+        <img src = "/uploads/logopenumbra.png" class = "muted rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
         
         <h4 align = "center"> <text class = "text-kaus"> Kaus: </text> Australism </h4>
         <p align = "justify"> Australism is a well-structured religion with a hierarchical system for each of the 11 major gods. Each god is associated with 1 animal and 8 aspects, or domain. For each aspect, there is a short story with a moral lesson and a prayer (88 in total); For each god, there is 1 divine law. </p>
@@ -155,11 +161,11 @@
                 <p align = "justify"> Samko's husband and brother to Frain and Iorte. Fran is a quiet god, known for doing many things at the same time, but never losing focus or head. In Kaus, when a son is very different from his parents (usually being very taken) he is called Oai, and Fran's father; as a kind of popular saying or slang. </p>
             </div>
         </div>
-        <img src = "/uploads/logopenumbra.png" class = "rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
+        <img src = "/uploads/logopenumbra.png" class = "muted rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
         
             <h4 align = "center"> <text class = "text-kaus"> Kaus: </text> Political System </h4>
             <p align = "center"> Coming soon ... </p>
-    </div>
+    </section>
+    <%- include ("../partials/scripts.ejs")%>
 </body>
-
 <%- include ("../partials/footer.ejs") %>

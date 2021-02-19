@@ -1,20 +1,26 @@
 <%- include ("../partials/header.ejs") %>
-<%- include ("../partials/ptnavbar.ejs") %>
 <body class="body">
-    <div class="container cb mt-2 mb-2">
-
+    <header>
+        <%- include ("../partials/ptnavbar.ejs") %>
+    </header>
+    <section class="banner simple">
         <ol class="breadcrumb bg-mb mt-4">
-        <li class="breadcrumb-item">
-            <a href="/pt" class="text-decoration-none">Início</a>
-        </li>
-        <li class="breadcrumb-item">Universo</li>
-        <li class="breadcrumb-item active">Noh</li>
+            <li class="breadcrumb-item">
+                <a href="/pt" class="text-decoration-none">Início</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/pt/mundo" class="text-decoration-none">Universo</a>
+            </li>
+            <li class="breadcrumb-item active">Nidheim</li>
         </ol>
+    </section>
+
+    <section class="container column">
         <h4 align = "center"><text class="text-noh">Noh</text></h4>
         <p align="justify">Diante de todo o caos estelar, é evidente que as leis antigas começam a desabar. A natureza não mais se comporta da mesma maneira e as Estrelas são utilizadas imprudentemente, colocando o próprio mundo em risco. Em meio a esse caos, a vila de Noh se ergue com bravura, posicionando-se em favor do equilíbrio. O poder que chega à terra é, certamente, um risco, e por isso fazem-se necessários guardiões que visam manter a balança em igualdade.</p>
         <p align="justify">Os monges de Noh acreditam plenamente em sua própria iluminação e, apesar disso, buscam em si a profunda humildade para a preservação do ambiente. A águia, como seu símbolo, representa a visão necessária para que se possa manter o equilíbrio e, ao mesmo tempo, também a necessidade de mudança de vida para que essa função possa ser exercida através de um verdadeiro renascimento, o desprendimento de si mesmo.</p>
 
-        <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
+        <img src = "/uploads/logopenumbra.png" class="muted rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
         
         <h4 align = "center"><text class="text-noh">Noh:</text> O Caminho</h4>
         <p align="justify">Noh foi erguida e roda em torno de uma coisa: iluminação. As noites são escuras quando a Lua não está no céu e as nuvens tapam as estrelas. E quando elas descem à Terra; é para nos iluminar mais de perto. Por isso que os nohitas se importam tanto com as Estrelas.</p>
@@ -22,10 +28,11 @@
         <p align="justify">Nohitas não guerreiam; atingem a paz. A violência é algo que deve ser evitado a todo custo, especialmente para aqueles que querem atingir a Iluminação; mas, às vezes, se mostra necessária.</p>
         <p align="justify">O Caminho não tem deuses, criaturas místicas, nada. Só o Ser Humano e a Iluminação; um estado de sabedoria e poder absolutos que só são atingidos por poucos felizardos, após reencarnações se esforçando para tal.</p>
         
-        <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
+        <img src = "/uploads/logopenumbra.png" class="muted rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
     
         <h4 align = "center"><text class="text-noh">Noh:</text> Sistema Político</h4>
         <p align="center">Em breve...</p>
-    </div>
+    </section>
+    <%- include ("../partials/scripts.ejs")%>
 </body>
 <%- include ("../partials/footer.ejs") %>

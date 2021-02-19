@@ -20,7 +20,6 @@
     "nodemon": "^2.0.4",
     "slugify": "^1.4.5"
   },
-  "devDependencies": {},
   "scripts": {
     "dev": "nodemon index",
     "prestart": "npm i",

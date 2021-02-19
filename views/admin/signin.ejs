@@ -1,18 +1,23 @@
 <%- include ("../partials/header.ejs") %>
-<body class = "body">  
-    <div class="container cb mt-2 mb-2">
-        <form method="POST" action="/admin/auth">
-            <div class="modal-body">
-              <label>E-mail</label>
-              <input type="email" class="form-control" name="email">
-              <label>Senha</label>
-              <input type="password" class="form-control" name="password">
-            </div>
-            <div class="g-recaptcha" align="center" data-sitekey="6LfRVM8ZAAAAAFJVEM3FlmrJH0U4gPqqpVA0H_H5"></div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-vernesis btn-block">Entrar</button>
-            </div>
-        </form>
-    </div>
+<body>  
+  <div class="loginform">
+    <form method="POST" action="/admin/auth">
+        <div class="column">
+          <label>
+            E-mail
+            <input type="email" class="form-control" name="email">
+          </label>
+
+          <label>
+            Senha
+            <input type="password" class="form-control" name="password">
+          </label>
+
+        </div>
+        <div class="g-recaptcha" align="center" data-sitekey="6LfRVM8ZAAAAAFJVEM3FlmrJH0U4gPqqpVA0H_H5"></div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-outline-dark btn-block">Entrar</button>
+        </div>
+    </form>
+  </div>
 </body>
-<%- include ("../partials/footer.ejs") %>

@@ -1,28 +1,35 @@
 <%- include ("../partials/header.ejs") %>
-<%- include ("../partials/engnavbar.ejs") %>
-<body class = "body">
-    <div class = "container cb mt-2 mb-2">
-
-        <ol class = "breadcrumb bg-mb mt-4">
-        <li class = "breadcrumb-item">
-            <a href="/en" class="text-decoration-none"> Home </a>
-        </li>
-        <li class = "breadcrumb-item"> Universe </li>
-        <li class = "breadcrumb-item active"> Silverwater </li>
+<body class="body">
+    <header>
+      <%- include ("../partials/ennavbar.ejs") %>
+    </header>
+    <section class="banner simple">
+        <ol class="breadcrumb bg-mb mt-4">
+            <li class="breadcrumb-item">
+                <a href="/en" class="text-decoration-none">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/en/world" class="text-decoration-none">Universe</a>
+            </li>
+            <li class="breadcrumb-item active">Silverwater</li>
         </ol>
+    </section>
+
+    <section class="container column">
         <h4 align = "center"> <text class = "text-silverwater"> Silverwater </text> </h4>
         <p align = "justify"> The world is a cruel place and, as a consequence, it is necessary that not only the individual, but the whole society adapt to it and take action accordingly. In Silverwater Bay, there are no means that cannot be justified by the ends, and as a consequence, morality is an entirely subjective concept. Survival and success are better than honor and loyalty. Organized around the leader who seems most worthy of the job, this entire civilization moves together, prepared to prevail in the face of the world's trials. </p>
         <p align = "justify"> Always crawling on the lookout for an opportunity, the snake does not care about its dignity and finds itself always dragging its belly across the floor, prepared to apply its poison in order to topple the target. In the same way, a citizen of Silverwater acts in front of those he knows, ready to snap his enemy's heel even though his head is in the face of an obvious crush. </p>
 
-        <img src = "/uploads/logopenumbra.png" class = "rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
+        <img src = "/uploads/logopenumbra.png" class = "muted rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
         
         <h4 align = "center"> <text class = "text-silverwater"> Silverwater: </text> Religion </h4>
         <p align = "center"> Coming soon ... </p>
         
-        <img src = "/uploads/logopenumbra.png" class = "rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
+        <img src = "/uploads/logopenumbra.png" class = "muted rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
     
         <h4 align = "center"> <text class = "text-silverwater"> Silverwater: </text> Political System </h4>
         <p align = "center"> Coming soon ... </p>
-    </div>
+    </section>
+    <%- include ("../partials/scripts.ejs")%>
 </body>
 <%- include ("../partials/footer.ejs") %>

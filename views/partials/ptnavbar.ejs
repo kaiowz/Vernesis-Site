@@ -1,65 +1,80 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark fixed-top bg-vernesis">
-    <div class="container bg-vernesis">
-		<a class="navbar-brand" href="/pt">
-			<img src="/uploads/Vernesis-PNG2.png" width="100" height="" alt="">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container justify-content-between">
+      <div class="logo">
+        <a class="navbar-brand" href="/pt">
+          <img src="/uploads/Vernesis.png" width="100">
         </a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/pt/sobre">
-              <i class="fas fa-address-card"></i> Sobre nós
-            </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-globe"></i> Universo
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-              <a class="dropdown-item" href="/pt/mundo">O Mundo</a>
-              <a class="dropdown-item" href="/pt/uria">Uria</a>
-              <a class="dropdown-item" href="/pt/nidheim">Nidheim</a>
-              <a class="dropdown-item" href="/pt/kaus">Kaus</a>
-              <a class="dropdown-item" href="/pt/noh">Noh</a>
-              <a class="dropdown-item" href="/pt/silverwater">Silverwater</a>
-            </div>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-newspaper"></i> Postagens
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-              <% categories.forEach(category => {%>
-                <a class="dropdown-item" href="/pt/<%= category.slug_pt%>/1"><%=category.title_pt %></a>
-              <%})%>
-            </div>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-language"></i> Idioma
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-            <a class="dropdown-item" href="/pt">Português</a>
-            <a class="dropdown-item" href="/en">Inglês</a>
-          </div>
-          <% if (session.user){%>
-            <li class="nav-item">
-              <a class="nav-link" href="/admin">
-                <i class="fas fa-users-cog"></i> Admin
-              </a>
-            </li>
-          <%}%>
-
-          <% if (session.user){%>
-            <li class="nav-item">
-              <a class="nav-link" href="/admin/logout">
-                <i class="fas fa-sign-out-alt"></i>
-              </a>
-            </li>
-          <%}%>
-        </ul>
       </div>
+
+      <div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/pt/sobre">
+                  <i class="fas fa-address-card"></i> Sobre nós
+                </a>
+              </li>
+              <div class="btn-group">
+                <li class="nav-item">
+                  <a class="nav-link" href="/pt/mundo">
+                    <i class="fas fa-globe"></i> Universo
+                  </a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/pt/uria">Uria</a></li>
+                    <li><a class="dropdown-item" href="/pt/nidheim">Nidheim</a></li>
+                    <li><a class="dropdown-item" href="/pt/kaus">Kaus</a></li>
+                    <li><a class="dropdown-item" href="/pt/noh">Noh</a></li>
+                    <li><a class="dropdown-item" href="/pt/silverwater">Silverwater</a></li>
+                  </ul>
+                </li>
+              </div>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-newspaper"></i> Postagens
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <% categories.forEach(category => {%>
+                    <li><a class="dropdown-item" href="/pt/<%= category.slug_pt%>/1"><%=category.title_pt %></a></li>
+                  <%})%>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-language"></i> Idioma
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/pt">Português</a></li>
+                  <li><a class="dropdown-item" href="/en">Inglês</a></li>
+                </ul>
+              </li>
+              <% if (session.user){%>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin">
+                  <i class="fas fa-users-cog"></i> Admin
+                </a>
+              </li>
+              <%}%>
+      
+              <% if (session.user){%>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin/logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                  </a>
+                </li>
+              <%}%>
+            </ul>
+          </div>
+        </div>
+  
+      </div>
+      
     </div>
-  </nav>
+</nav>

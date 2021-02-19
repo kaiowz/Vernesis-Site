@@ -77,13 +77,13 @@ class ArticleController{
             if (isNaN(page) || page == 1){
                 offset = 0
             }else{
-                offset = (parseInt(num) -1) * 6
+                offset = (parseInt(num) -1) * 9
             }
     
             await database.Article.find({lang: "pt"}).populate("category_id").sort({_id: -1}).limit(6).skip(offset).then(async (articles)  => {
                 var next
 
-                if (offset + 6 >= articles.length){
+                if (offset + 9 >= articles.length){
                     next = false
                 }else{
                     next = true
@@ -127,13 +127,13 @@ class ArticleController{
             if (isNaN(page) || page == 1){
                 offset = 0
             }else{
-                offset = (parseInt(num) - 1) * 6
+                offset = (parseInt(num) - 1) * 9
             }
     
             await database.Article.find({lang: "en"}).populate("category_id").sort({_id: -1}).limit(6).skip(offset).then(async (articles)  => {
                 var next
 
-                if (offset + 6 >= articles.length){
+                if (offset + 9 >= articles.length){
                     next = false
                 }else{
                     next = true

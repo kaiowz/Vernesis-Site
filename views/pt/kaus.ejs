@@ -1,20 +1,26 @@
 <%- include ("../partials/header.ejs") %>
-<%- include ("../partials/ptnavbar.ejs") %>
 <body class="body">
-    <div class="container cb mt-2 mb-2">
-
+    <header>
+        <%- include ("../partials/ptnavbar.ejs") %>
+    </header>
+    <section class="banner simple">
         <ol class="breadcrumb bg-mb mt-4">
-        <li class="breadcrumb-item">
-            <a href="/pt" class="text-decoration-none">Início</a>
-        </li>
-        <li class="breadcrumb-item">Universo</li>
-        <li class="breadcrumb-item active">Kaus</li>
+            <li class="breadcrumb-item">
+                <a href="/pt" class="text-decoration-none">Início</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/pt/mundo" class="text-decoration-none">Universo</a>
+            </li>
+            <li class="breadcrumb-item active">Kaus</li>
         </ol>
+    </section>
+
+    <section class="container column">
         <h4 align = "center"><text class="text-kaus">Kaus</text></h4>
         <p align="justify">O poder das estrelas é, sem qualquer sombra de dúvidas, um presente divino. Sem haver outra explicação adequada, torna-se evidente que os deuses, após tantos milênios, finalmente reconheceram os méritos dos homens e dispuseram-se a ir de encontro aos mesmos. Qualquer ato menor que a profunda gratidão é uma blasfêmia e a teocracia de Kaus há de utilizar, sem escrúpulos, os presentes concedidos à humanidade pelos deuses, que é a sua própria presença.</p>
         <p align="justify">O chacal é o animal que costumeiramente desenterra os ossos e os guarda. Assim como o mesmo, os cidadãos de Kaus também pretendem “desenterrar” as estrelas e mantê-las junto a si. Se o poder se faz ali presente, evidentemente é para ser utilizado e negá-lo não seria nada além de pura arrogância, uma vez que o verdadeiro humilde se vê indigno de recusar algo presenteado por aquele que é superior. Como consequência, eles hão de se devotar inteiramente ao serviço daqueles que se dignaram a conceder o que é puro àqueles que são indignos.        </p>
 
-        <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
+        <img src = "/uploads/logopenumbra.png" class="muted rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
         
         <h4 align = "center"><text class="text-kaus">Kaus:</text> Australismo</h4>
         <p align="justify">O Australismo é uma religião bem estruturada com um sistema hierárquico para cada um dos 11 deuses maiores. Cada deus é associado a 1 animal e 8 aspectos, ou domínio. Para cada aspecto, há um pequeno conto com uma lição de moral e uma oração (88 ao total); Para cada deus, há 1 lei divina.</p>
@@ -155,10 +161,11 @@
                 <p align="justify">Esposo de Samko e irmão de Frain e Iorte. Fran é um deus calado, conhecido por fazer muitas coisas ao mesmo tempo, mas de nunca perder o foco ou a cabeça. Em Kaus, quando um filho é muito diferente dos seus pais (normalmente sendo muito levado) ele é chamado de Oai, e o pai de Fran; como uma espécie de ditado ou gíria popular.</p>
             </div>
         </div>
-        <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
+        <img src = "/uploads/logopenumbra.png" class="muted rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
         
             <h4 align = "center"><text class="text-kaus">Kaus:</text> Sistema Político</h4>
             <p align="center">Em breve ...</p>
-    </div>
+    </section>
+    <%- include ("../partials/scripts.ejs")%>
 </body>
 <%- include ("../partials/footer.ejs") %>

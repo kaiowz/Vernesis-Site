@@ -1,20 +1,26 @@
 <%- include ("../partials/header.ejs") %>
-<%- include ("../partials/engnavbar.ejs") %>
-<body class = "body">
-    <div class = "container cb mt-2 mb-2">
-
-        <ol class = "breadcrumb bg-mb mt-4">
-        <li class = "breadcrumb-item">
-            <a href="/en" class="text-decoration-none"> Home </a>
-        </li>
-        <li class = "breadcrumb-item"> Universe </li>
-        <li class = "breadcrumb-item active"> Uria </li>
+<body class="body">
+    <header>
+      <%- include ("../partials/ennavbar.ejs") %>
+    </header>
+    <section class="banner simple">
+        <ol class="breadcrumb bg-mb mt-4"">
+            <li class="breadcrumb-item">
+                <a href="/en" class="text-decoration-none">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/en/world" class="text-decoration-none">Universe</a>
+            </li>
+            <li class="breadcrumb-item active">Uria</li>
         </ol>
+    </section>
+
+    <section class="container column">
         <h4 align = "center"> <text class = "text-uria"> Uria </text> </h4>
         <p align = "justify"> Surrounded by large, imposing and, at the same time, welcoming walls, the kingdom of Uria is seen as the great herald of hope. As a society that often represents justice for the weak and oppressed, its soldiers are always willing to fight for what seems right in the face of their ideals. </p>
         <p align = "justify"> For a citizen of Uria, following what you believe in is essential. Symbolized by the figure of the lion, he will often seek to impose his beliefs and pride can often be an obstacle in the relationship before other individuals; even so, it is common for these beliefs to guide you to what appears to be right. </p>
 
-        <img src = "/uploads/logopenumbra.png" class = "rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
+        <img src = "/uploads/logopenumbra.png" class = "muted rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
         
         <h4 align = "center"> <text class = "text-uria"> Uria: </text> Uranism </h4>
         <p align = "justify"> When Kaus started to grow, he had a lot of influence on other peoples of Vernesis. And the one who drank the most from its source was Uria; absorbing a lot of your religion. Uranism is a “Manichaean Australism”. </p>
@@ -22,11 +28,11 @@
         <p align = "justify"> It took a few centuries to bring about the emergence of Uranism, not as an aspect, but as a separate religion. Where Ura is the supreme god, omnipresent and omniscient, protecting humanity and fighting Iorte, the demon-jackal, wicked and treacherous. </p>
         <p align = "justify"> This clearly reflected the political situation of the two peoples, who have been at war ever since. Kaus wants all the power of the stars, and will do anything to conquer him - including attacking Ura constantly -, Ura wants to extinguish the evil and meanness of the world - and what better way to start than to destroy the city that has the same personality and symbol of the most wicked of demons. </p>
         
-        <img src = "/uploads/logopenumbra.png" class = "rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
+        <img src = "/uploads/logopenumbra.png" class = "muted rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
     
         <h4 align = "center"> <text class = "text-uria"> Uria: </text> Political System </h4>
         <p align = "center"> Coming soon... </p>
-    </div>
+    </section>
+    <%- include ("../partials/scripts.ejs")%>
 </body>
-
 <%- include ("../partials/footer.ejs") %>

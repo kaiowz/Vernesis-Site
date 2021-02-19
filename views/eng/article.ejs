@@ -1,28 +1,26 @@
 <%- include ("../partials/header.ejs") %>
-<%- include ("../partials/engnavbar.ejs") %>
 <body class = "body">  
-    <div class="container cb mt-2 mb-2">
-  
-      <h1 class="mt-4 mb-3">Post
-        <small><%= article.category_id.title_pt %></small>
-      </h1>
-  
-      <ol class="breadcrumb bg-mb">
-        <li class="breadcrumb-item">
-          <a href="/pt" class="text-decoration-none">Home</a>
-        </li>
-        <li class="breadcrumb-item">News</li>
-        <li class="breadcrumb-item">
-          <a href="/pt/<%=article.category_id.slug_en %>/1" class="text-decoration-none"><%= article.category_id.title_en %></a>
-        </li>
-        <li class="breadcrumb-item active"><%= article.title %></li>
-      </ol>
-      <div class="container">
-        <h4 class="card-title" align="center"><%= article.title %></h2>
-        <p class="card-text"><%- article.body%></p>
-      </div>
-    </div>
-    <!-- /.container -->
+  <header>
+    <%- include ("../partials/ennavbar.ejs") %>
+  </header>
+  <section class="banner simple">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/en" class="text-decoration-none">Home</a>
+      </li>
+      <li class="breadcrumb-item">Posts</li>
+      <li class="breadcrumb-item">
+        <a href="/en/<%=article.category_id.slug_en %>/1" class="text-decoration-none"><%= article.category_id.title_en %></a>
+      </li>
+      <li class="breadcrumb-item active"><%= article.title %></li>
+    </ol>
+  </section>
+    
+  <section class="container column">
+    <h4 class="card-title" align="center"><%= article.title %></h2>
+    <p class="card-text"><%- article.body%></p>
+  </section>
+  <%- include ("../partials/scripts.ejs")%>
 </body>
 
 <%- include ("../partials/footer.ejs") %>

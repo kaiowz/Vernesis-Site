@@ -1,20 +1,26 @@
 <%- include ("../partials/header.ejs") %>
-<%- include ("../partials/ptnavbar.ejs") %>
 <body class="body">
-    <div class="container cb mt-2 mb-2">
-
+    <header>
+      <%- include ("../partials/ptnavbar.ejs") %>
+    </header>
+    <section class="banner simple">
         <ol class="breadcrumb bg-mb mt-4">
-        <li class="breadcrumb-item">
-            <a href="/pt" class="text-decoration-none">Início</a>
-        </li>
-        <li class="breadcrumb-item">Universo</li>
-        <li class="breadcrumb-item active">Uria</li>
+            <li class="breadcrumb-item">
+                <a href="/pt" class="text-decoration-none">Início</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/pt/mundo" class="text-decoration-none">Universo</a>
+            </li>
+            <li class="breadcrumb-item active">Uria</li>
         </ol>
+    </section>
+
+    <section class="container column">
         <h4 align = "center"><text class="text-uria">Uria</text></h4>
         <p align="justify">Rodeado por muralhas grandes, imponentes e, ao mesmo tempo, acolhedoras, o reino de Uria é visto como o grande arauto da esperança. Sendo uma sociedade que frequentemente representa a justiça para com os fracos e oprimidos, seus soldados sempre dispõem-se a lutar por aquilo que parece certo perante os seus ideais.</p>
         <p align="justify">Para um cidadão de Uria, seguir aquilo que acredita é essencial. Simbolizados pela figura do leão, frequentemente buscará impor suas crenças e o orgulho poderá, muitas vezes, ser um obstáculo na relação diante de outros indivíduos; mesmo assim, é comum que essas crenças o guiem para aquilo que parece ser o certo.</p>
 
-        <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
+        <img src ="/uploads/logopenumbra.png" class="muted rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
         
         <h4 align = "center"><text class="text-uria">Uria:</text> Uranismo</h4>
         <p align="justify">Quando Kaus começou a crescer, teve bastante influência em outros povos de Vernesis. E aquele que mais bebeu de sua fonte foi Uria; absorvendo muito da sua religião. O uranismo é um “australismo maniqueísta”.</p>
@@ -22,10 +28,11 @@
         <p align="justify">Poucos séculos foram necessários para concretizar o surgimento do uranismo, não como uma vertente, mas uma religião à parte. Onde Ura é o deus-supremo, onipresente e onisciente, protegendo a humanidade e lutando contra Iorte, o demônio-chacal, perverso e traiçoeiro.</p>
         <p align="justify">Isso claramente refletia a situação política dos dois povos, que vivem em guerra desde então. Kaus quer todo o poder das estrelas, e fará de tudo por conquistá-lo -incluindo atacar Ura constantemente-, Ura quer extinguir o mal e a mesquinharia do mundo - e qual melhor forma de começar do que destruir a cidade que tem a mesma personalidade e símbolo do mais perverso dos demônios.</p>
         
-        <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
+        <img src ="/uploads/logopenumbra.png" class="muted rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
     
         <h4 align = "center"><text class="text-uria">Uria:</text> Sistema Político</h4>
         <p align="center">Em breve...</p>
-    </div>
+    </section>
+    <%- include ("../partials/scripts.ejs")%>
 </body>
 <%- include ("../partials/footer.ejs") %>

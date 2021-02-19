@@ -39,10 +39,6 @@ server.use((req, res, next) => {
     next()
 })
 
-
-
-
-
 //Static
 server.use(express.static("public"))
 

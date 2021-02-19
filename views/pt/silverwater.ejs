@@ -1,28 +1,41 @@
 <%- include ("../partials/header.ejs") %>
-<%- include ("../partials/ptnavbar.ejs") %>
 <body class="body">
-    <div class="container cb mt-2 mb-2">
-
+    <header>
+      <%- include ("../partials/ptnavbar.ejs") %>
+    </header>
+    <section class="banner simple">
         <ol class="breadcrumb bg-mb mt-4">
-        <li class="breadcrumb-item">
-            <a href="/pt" class="text-decoration-none">Início</a>
-        </li>
-        <li class="breadcrumb-item">Universo</li>
-        <li class="breadcrumb-item active">Silverwater</li>
+            <li class="breadcrumb-item">
+                <a href="/pt" class="text-decoration-none">Início</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/pt/mundo" class="text-decoration-none">Universo</a>
+            </li>
+            <li class="breadcrumb-item active">Silverwater</li>
         </ol>
+    </section>
+
+    <section class="container column">
+        <h4 align = "center"><text class="text-nidheim">Nidheim</text></h4>
+        <p align="justify">Em meio às planícies gélidas e tundras, há uma civilização que, seguindo o puro significado da força e sobrevivência, é capaz de se sustentar. A tribo de Nidheim é caracterizada pelo valor do poder e, por muitos, seus membros são vistos como bárbaros que não se importam com nada além do conflito e da conquista.</p>
+        <p align="justify">Diante do dragão, nem mesmo o gelo há de ser um obstáculo. A chama acesa em seu coração é capaz de superar todos os obstáculos e derreter tudo aquilo que busca se opor. Um membro de Nidheim jamais deixa-se superar e vê a força como o fator determinante em todos os casos. Se não pela derrota absoluta, jamais poderá se prostrar diante de outros, uma vez que a violência é o diálogo do mesmo.</p>
+
+        <img src = "/uploads/logopenumbra.png" class="muted rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
+        
         <h4 align = "center"><text class="text-silverwater">Silverwater</text></h4>
         <p align="justify">O mundo é um local cruel e, como consequência, é necessário que não apenas o indivíduo, mas toda a sociedade se adapte à isso e tome as atitudes nos conformes. Na baía de Silverwater, não existem meios que não possam ser justificados pelos fins e, como consequência, a moralidade é um conceito inteiramente subjetivo. Mais vale a sobrevivência e o sucesso que a honra e a lealdade. Organizada em volta do líder que mais pareça digno do cargo, toda essa civilização se move em conjunto, preparada para prevalecer diante das provações do mundo.</p>
         <p align="justify">Sempre rastejando à espreita de uma oportunidade, a cobra não se importa com a própria dignidade e vê-se arrastando sempre sua barriga pelo chão, preparada para aplicar seu veneno com o objetivo de derrubar o alvo. Da mesma maneira um cidadão de Silverwater age diante daqueles que conhece, pronto para abocanhar o calcanhar de seu inimigo mesmo que sua cabeça esteja diante de um evidente esmagamento.</p>
 
-        <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
+        <img src = "/uploads/logopenumbra.png" class="muted rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
         
         <h4 align = "center"><text class="text-silverwater">Silverwater:</text> Religião</h4>
         <p align="center">Em breve...</p>
         
-        <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
+        <img src = "/uploads/logopenumbra.png" class="muted rounded mx-auto d-block mb-1" alt="Responsive image" width="100">
     
         <h4 align = "center"><text class="text-silverwater">Silverwater:</text> Sistema Político</h4>
         <p align="center">Em breve...</p>
-    </div>
+    </section>
+    <%- include ("../partials/scripts.ejs")%>
 </body>
 <%- include ("../partials/footer.ejs") %>

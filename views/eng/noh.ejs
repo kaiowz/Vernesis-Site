@@ -1,20 +1,26 @@
 <%- include ("../partials/header.ejs") %>
-<%- include ("../partials/engnavbar.ejs") %>
-<body class = "body">
-    <div class = "container cb mt-2 mb-2">
-
-        <ol class = "breadcrumb bg-mb mt-4">
-        <li class = "breadcrumb-item">
-            <a href="/en" class="text-decoration-none"> Home </a>
-        </li>
-        <li class = "breadcrumb-item"> Universe </li>
-        <li class = "breadcrumb-item active"> Noh </li>
+<body class="body">
+    <header>
+        <%- include ("../partials/ennavbar.ejs") %>
+    </header>
+    <section class="banner simple">
+        <ol class="breadcrumb bg-mb mt-4">
+            <li class="breadcrumb-item">
+                <a href="/en" class="text-decoration-none">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/en/world" class="text-decoration-none">Universe</a>
+            </li>
+            <li class="breadcrumb-item active">Nidheim</li>
         </ol>
+    </section>
+
+    <section class="container column">
         <h4 align = "center"> <text class = "text-noh"> Noh </text> </h4>
         <p align = "justify"> In the face of all the chaos of the stars, it is evident that the ancient laws begin to collapse. Nature no longer behaves in the same way and Stars are used recklessly, putting the world itself at risk. In the midst of this chaos, the village of Noh rises bravely, positioning itself in favor of balance. The power that reaches the land is certainly a risk, and that is why guardians are needed who aim to keep the balance on an equal footing. </p>
         <p align = "justify"> The monks of Noh fully believe in their own enlightenment and, despite this, seek deep humility in themselves to preserve the environment. The eagle, as its symbol, represents the vision necessary to maintain balance and, at the same time, also the need for a change of life so that this function can be exercised through a real rebirth, the detachment from oneself. </p>
 
-        <img src = "/uploads/logopenumbra.png" class = "rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
+        <img src = "/uploads/logopenumbra.png" class = "muted rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
         
         <h4 align = "center"> <text class = "text-noh"> Noh: </text> The Way </h4>
         <p align = "justify"> Noh has been erected and rotates around one thing: lighting. The nights are dark when the moon is not in the sky and the clouds cover the stars. And when they descend to Earth; is to illuminate us more closely. That's why nohitas care so much about the Stars. </p>
@@ -22,10 +28,11 @@
         <p align = "justify"> Nohitas do not war; achieve peace. Violence is something that must be avoided at all costs, especially for those who want to achieve Enlightenment; but sometimes it is necessary. </p>
         <p align = "justify"> The Way has no gods, mystical creatures, nothing. Only the Human Being and Enlightenment; a state of absolute wisdom and power that is only reached by a few lucky people, after reincarnations striving to do so. </p>
         
-        <img src = "/uploads/logopenumbra.png" class = "rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
+        <img src = "/uploads/logopenumbra.png" class = "muted rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
     
         <h4 align = "center"> <text class = "text-noh"> Noh: </text> Political System </h4>
         <p align = "center"> Coming soon ... </p>
-    </div>
+    </section>
+    <%- include ("../partials/scripts.ejs")%>
 </body>
 <%- include ("../partials/footer.ejs") %>

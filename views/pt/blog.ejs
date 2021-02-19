@@ -1,60 +1,47 @@
 <%- include ("../partials/header.ejs") %>
-<%- include ("../partials/ptnavbar.ejs") %>
 <body class = "body">  
-    <div class="container cb mt-2 mb-2">
-  
-      <h1 class="mt-4 mb-3">Notícias
-        <small></small>
-      </h1>
-  
-      <ol class="breadcrumb bg-mb">
-        <li class="breadcrumb-item">
-          <a href="/pt" class="text-decoration-none">Início</a>
-        </li>
-        <li class="breadcrumb-item">Notícias</li>
-        <li class="breadcrumb-item active"><%= category %></li>
-      </ol>
-  
-      <!-- Blog Post -->
-      <% result.articles.forEach(article => { %>
-        <div class="card card-blog mb-4">
-          <div class="card-body ">
-            <div class="row">
-              <div class="col-lg-4">
-                <a href="/pt/<%= article.slug%>">
-                  <img class="img-fluid rounded" src="<%= article.link_img %>" alt="">
-                </a>
-              </div>
-              <div class="col-lg-8">
-                <h2 class="card-title"><%= article.title %></h2>
-                <p class="card-text"><%- article.body.substring(0, 300) + "..." %></p>
-                <br>
-                <br>
-                <a href="/pt/<%= article.slug%>" class="btn btn-vernesis btn-block text-decoration-none">Ler &rarr;</a>
-              </div>
+  <header>
+    <%- include ("../partials/ptnavbar.ejs") %>
+  </header>
+
+  <section class="banner simple">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/pt" class="text-decoration-none">Início</a>
+      </li>
+      <li class="breadcrumb-item">Postagens</li>
+      <li class="breadcrumb-item active"><%= category %></li>
+    </ol>
+  </section>
+
+  <section class="container postagens">
+    <% result.articles.forEach(article => { %>
+        <div class="post">
+          <a class="post_link" href="/pt/<%= article.slug%>">
+            <div class="post_title">
+              <h4><%= article.title %></h4>
+              <div class="post_bar mb-2"></div>
+              <img class="post_img rounded" src="<%= article.link_img %>" alt="">
             </div>
-          </div>
+          </a>
         </div>
-      <%})%>
-      
+    <%})%>
+  </section>
 
-      <!-- Pagination -->
-      <ul class="pagination justify-content-center mb-4">
-        <% if (result.page != 1){ %>
-          <li class="page-item">
-            <a class="page-link" href="/pt/<%= result.articles[0].category_id.slug_pt %>/<%=result.page-1%>">&larr; Recentes</a>
-          </li>
-        <%}%>
+  <ul class="pagination justify-content-center mb-4">
+    <% if (result.page != 1){ %>
+      <li class="page-item">
+        <a class="page-link" href="/pt/<%= result.articles[0].category_id.slug_pt %>/<%=result.page-1%>">&larr; Recentes</a>
+      </li>
+    <%}%>
 
-        <% if (result.next){ %>
-          <li class="page-item">
-            <a class="page-link" href="/pt/<%= result.articles[0].category_id.slug_pt %>/<%=result.page+1%>">Antigos &rarr;</a>
-          </li>
-        <%}%>
-      </ul>
-  
-    </div>
-    <!-- /.container -->
+    <% if (result.next){ %>
+      <li class="page-item">
+        <a class="page-link" href="/pt/<%= result.articles[0].category_id.slug_pt %>/<%=result.page+1%>">Antigos &rarr;</a>
+      </li>
+    <%}%>
+  </ul>
+  <%- include ("../partials/scripts.ejs")%>
 </body>
 
 <%- include ("../partials/footer.ejs") %>

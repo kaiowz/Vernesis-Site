@@ -1,115 +1,104 @@
 <%- include ("../partials/header.ejs") %>
-<%- include ("../partials/ptnavbar.ejs") %>
-<body class="body">
-    <!-- Page Content -->
-  <div class="container cb mt-2 mb-2">
-
-    <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">Sobre
-      <small>Penumbra Games</small>
-    </h1>
-
-    <ol class="breadcrumb bg-mb">
+<body>
+  <header>
+      <%- include ("../partials/ptnavbar.ejs") %>
+  </header>
+  
+  <section class="banner">
+    <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <a href="/pt" class="text-decoration-none">Início</a>
       </li>
       <li class="breadcrumb-item active">Sobre nós</li>
     </ol>
-
-    <!-- Intro Content -->
-    <div class="row">
-      <div class="col-lg-6">
-          <div class="container bg-eb rounded">
-            <img class="img-fluid" src="/uploads/logopag.png" alt="Responsive image" width="720" height="400">
-          </div>
-      </div>
-      <div class="col-lg-6">
-        <h2>Penumbra Games</h2>
-        <p  align="justify">Penumbra Games é um estúdio brasileiro indie de desenvolvimento de jogos criado em Setembro de 2019 juntamente com a ideia de Vernesis, sendo esse o nosso primeiro de muitos jogos.</p>
-        <p  align="justify">Nosso time é feito de amantes de jogos talentosos que são movidos por uma paixão intensa pelo entretenimento digital. Buscamos trazer uma união de mecânicas inovadoras e emocionantes ao mundo 2D, onde criaremos jogos que todos possam se orgulhar de jogar.</p>
-      </div>
-      <div class="container mt-1">
-        <p align="justify">Acreditamos que o universo dos jogos é muito mais que o entretenimento digital. Para nós, esse universo não é só capaz de trazer a diversão, mas também é onde se pode fazer amigos, criar momentos únicos e até mesmo aprender coisas importantes para se usar no dia-a-dia.</p>
-      </div>
+    <div class="container">
+      <img class="img_bg" src="/uploads/logopag.png" alt="Responsive image" width="100%">
     </div>
-    <!-- /.row -->
+  </section>
 
-    <!-- Team Members -->
-    <h2>Nosso time</h2>
+  <section>
+    <div class="container column">
+      <h2 class="align-self-center">Penumbra Games</h2>
+      <p align="justify">Penumbra Games é um estúdio brasileiro indie de desenvolvimento de jogos criado em Setembro de 2019 juntamente com a ideia de Vernesis, sendo esse o nosso primeiro de muitos jogos.</p>
+      <p align="justify">Nosso time é feito de amantes de jogos talentosos que são movidos por uma paixão intensa pelo entretenimento digital. Buscamos trazer uma união de mecânicas inovadoras e emocionantes ao mundo 2D, onde criaremos jogos que todos possam se orgulhar de jogar.</p>
+      <p align="justify">Acreditamos que o universo dos jogos é muito mais que o entretenimento digital. Para nós, esse universo não é só capaz de trazer a diversão, mas também é onde se pode fazer amigos, criar momentos únicos e até mesmo aprender coisas importantes para se usar no dia-a-dia.</p>
+    </div>
+  </section>
 
-    <div class="row">
-      <div class="col-lg-3 mb-4">
-        <div class="card h-100 text-center">
-          <img class="card-img-top rounded" src="/uploads/kaio.jpg" alt="">
-          <div class="card-body">
+  <section class="team">
+    <div class="container column mb-4">
+      <div class="column">
+        <h2 class="align-self-center">Nosso time</h2>
+      </div>
+      <div class="flexWrap">
+        <div class="card">
+          <div class="card_title">
+            <img class="card-img-top rounded" src="/uploads/kaio.jpg" alt="">
             <h4 class="card-title">Kaio Borges</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Programador e Designer de Jogos</h6>
+          </div>
+          <div class="card_body">
+            <h6 class="card-subtitle mb-2 text-muted" align="center">Programador e Designer de Jogos</h6>
             <p class="card-text text-justify">Kaio Borges é responsável por todas as linhas de código nos projetos. Desde novo sempre teve muito contato com jogos e tecnologia, fator resultante para ingressar em uma graduação na área e estudar muito sobre o desenvolvimento de jogos. Atualmente é estudante de Sistemas de Informação pela Universidade Estadual da Bahia e junto a Rafael Araújo, reuniu o time ao qual se denominam: Penumbra Games. </p>
           </div>
         </div>
-      </div>
-      <div class="col-lg-3 mb-4">
-        <div class="card h-100 text-center">
-          <img class="card-img-top rounded" src="/uploads/logopenumbra.png" alt="">
-          <div class="card-body">
+  
+        <div class="card">
+          <div class="card_title">
+            <img class="card-img-top rounded" src="/uploads/logopenumbra.png" alt="">
             <h4 class="card-title">Rafael Araújo</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Artista & Animação</h6>
-            <p class="card-text text-justify">Rafael Araújo é o responsável por toda a parte visual nos projetos, tendo o auxílio dos outros artistas para criar as identidades visuais necessárias. Um amante de jogos nato que desde muito tempo queria lançar seus projetos para os outros jogarem, já se arriscou em plataformas como o Byond, criando um Fã Game de Naruto. Atualmente é estudante de Sistemas de Informação e em seu tempo livre, quando não está a trabalho, realiza as criações do Vernesis.</p>
+          </div>
+          <div class="card_body">
+            <h6 class="card-subtitle mb-2 text-muted" align="center">Artista & Animação</h6>
+              <p class="card-text text-justify">Rafael Araújo é o responsável por toda a parte visual nos projetos, tendo o auxílio dos outros artistas para criar as identidades visuais necessárias. Um amante de jogos nato que desde muito tempo queria lançar seus projetos para os outros jogarem, já se arriscou em plataformas como o Byond, criando um Fã Game de Naruto. Atualmente é estudante de Sistemas de Informação e em seu tempo livre, quando não está a trabalho, realiza as criações do Vernesis.</p>
           </div>
         </div>
-      </div>
-      <div class="col-lg-3 mb-4">
-        <div class="card h-100 text-center">
-          <img class="card-img-top rounded" src="/uploads/logopenumbra.png" alt="">
-          <div class="card-body">
+  
+        <div class="card">
+          <div class="card_title">
+            <img class="card-img-top rounded" src="/uploads/logopenumbra.png" alt="">
             <h4 class="card-title">Ygor Ferrari</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Administrador Chefe e Compositor</h6>
-            <p class="card-text text-justify">Ygor Ferrari é o responsável pelo senso crítico da criação da equipe e também pelas trilhas sonoras originais dos projetos. Há algum tempo já se aventurava pelo mundo da música, aprendendo alguns instrumentos como: Violão e Piano. Atualmente ele, em seu tempo livre, cria as maravilhosas composições que os jogadores irão escutar em cada desafio pelos diversos mundos.</p>
+          </div>
+          <div class="card_body">
+            <h6 class="card-subtitle mb-2 text-muted" align="center">Administrador Chefe e Compositor</h6>
+              <p class="card-text text-justify">Ygor Ferrari é o responsável pelo senso crítico da criação da equipe e também pelas trilhas sonoras originais dos projetos. Há algum tempo já se aventurava pelo mundo da música, aprendendo alguns instrumentos como: Violão e Piano. Atualmente ele, em seu tempo livre, cria as maravilhosas composições que os jogadores irão escutar em cada desafio pelos diversos mundos.</p>
           </div>
         </div>
-      </div>
-      <div class="col-lg-3 mb-4">
-        <div class="card h-100 text-center">
-          <img class="card-img-top rounded" src="/uploads/logopenumbra.png" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Matheus Soares</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Administrador Chefe</h6>
-            <p class="card-text text-justify">Matheus Soares é o responsável pelo gerenciamento da comunidade dentro de jogo e fora dele, também faz parte da criação de conteúdo de forma ativa. É um membro notável e dedicado que possui uma experiência grande nesse aspecto devido a sua presença em outros jogos.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 mb-4">
-        <div class="card h-100 text-center">
-          <img class="card-img-top rounded" src="/uploads/guilherme.jpg" alt="">
-          <div class="card-body">
+  
+        <div class="card">
+          <div class="card_title">
+            <img class="card-img-top rounded" src="/uploads/guilherme.jpg" alt="">
             <h4 class="card-title">Guilherme Lopes</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Arte & Animação</h6>
+          </div>
+          <div class="card_body">
+            <h6 class="card-subtitle mb-2 text-muted" align="center">Arte & Animação</h6>
             <p class="card-text text-justify">Guilherme é um jovem que desde pequeno teve muito contato com o mundo das artes, tendo um apreço muito grande por essa área. Desde então passou a usar o seu tempo livre para fazer desenhos e aprimorar sua arte, primeiramente no papel e posteriormente com pixel arte. No Vernesis, é responsável pela parte artística, envolvendo a criação de sprites e animações, junto com outros integrantes do grupo. <i class="fas fa-thumbs-up"></i></p>
           </div>
         </div>
-      </div>
-      <div class="col-lg-3 mb-4">
-        <div class="card h-100 text-center">
-          <img class="card-img-top rounded" src="/uploads/logopenumbra.png" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Gabriel Vinícius</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Administrador</h6>
-            <p class="card-text text-justify">Gabriel Vinícius é o responsável pelo gerenciamento da comunidade dentro de jogo e fora dele, também faz parte da criação de conteúdo de forma ativa. Além dessa função, Gabriel é responsável por realizar alguns testes de seguranças em nossa empresa, buscando o maior conforto e confiabilidade para os jogadores.</p>
+  
+        <div class="card">
+          <div class="card_title">
+            <img class="card-img-top rounded" src="/uploads/logopenumbra.png" alt="">
+            <h4 class="card-title">Matheus Soares</h4>
+          </div>
+          <div class="card_body">
+            <h6 class="card-subtitle mb-2 text-muted" align="center">Administrador Chefe</h6>
+              <p class="card-text text-justify">Matheus Soares é o responsável pelo gerenciamento da comunidade dentro de jogo e fora dele, também faz parte da criação de conteúdo de forma ativa. É um membro notável e dedicado que possui uma experiência grande nesse aspecto devido a sua presença em outros jogos.</p>
           </div>
         </div>
-      </div>
-      <div class="col-lg-3 mb-4">
-        <div class="card h-100 text-center">
-          <img class="card-img-top rounded" src="/uploads/logopenumbra.png" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Viktoria</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Artista & Animação</h6>
-            <p class="card-text">Em breve...</p>
+  
+        <div class="card">
+          <div class="card_title">
+            <img class="card-img-top rounded" src="/uploads/logopenumbra.png" alt="">
+            <h4 class="card-title">Gabriel Vinícius</h4>
+          </div>
+          <div class="card_body">
+            <h6 class="card-subtitle mb-2 text-muted" align="center">Administrador</h6>
+            <p>Gabriel Vinícius é o responsável pelo gerenciamento da comunidade dentro de jogo e fora dele, também faz parte da criação de conteúdo de forma ativa. Além dessa função, Gabriel é responsável por realizar alguns testes de seguranças em nossa empresa, buscando o maior conforto e confiabilidade para os jogadores.</p>
           </div>
         </div>
       </div>
     </div>
-    <!-- /.row -->
-  </div>
+  </section>
+  <%- include ("../partials/scripts.ejs")%>
 </body>
 <%- include ("../partials/footer.ejs") %>

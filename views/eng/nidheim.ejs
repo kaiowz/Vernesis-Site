@@ -1,31 +1,37 @@
 <%- include ("../partials/header.ejs") %>
-<%- include ("../partials/engnavbar.ejs") %>
-<body class = "body">
-    <div class = "container cb mt-2 mb-2">
-
-        <ol class = "breadcrumb bg-mb mt-4">
-        <li class = "breadcrumb-item">
-            <a href="/en" class="text-decoration-none">Home</a>
-        </li>
-        <li class = "breadcrumb-item">Universe</li>
-        <li class = "breadcrumb-item active">Nidheim</li>
+<body>
+    <header>
+        <%- include ("../partials/ennavbar.ejs") %>
+    </header>
+    <section class="banner simple">
+        <ol class="breadcrumb bg-mb mt-4">
+            <li class="breadcrumb-item">
+                <a href="/en" class="text-decoration-none">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/en/world" class="text-decoration-none">Universe</a>
+            </li>
+            <li class="breadcrumb-item active">Nidheim</li>
         </ol>
+    </section>
+
+    <section class="container column">
         <h4 align = "center"> <text class = "text-nidheim"> Nidheim </text> </h4>
         <p align = "justify"> In the midst of the icy plains and tundras, there is a civilization that, following the pure meaning of strength and survival, is able to sustain itself. The Nidheim tribe is characterized by the value of power and, by many, its members are seen as barbarians who care nothing about conflict and conquest. </p>
         <p align = "justify"> In front of the dragon, not even the ice will be an obstacle. The flame burning in your heart is able to overcome all obstacles and melt everything that seeks to oppose. A member of Nidheim never allows himself to be overcome and sees strength as the determining factor in all cases. If not for absolute defeat, he will never be able to prostrate himself in front of others, since violence is his dialogue. </p>
 
-        <img src = "/uploads/logopenumbra.png" class = "rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
+        <img src = "/uploads/logopenumbra.png" class = "muted rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
         
         <h4 align = "center"> <text class = "text-nidheim">Nidheim:</text> Nidlebens beliefs </h4>
         <p align = "justify"> The nidlebens come from a cold and hostile region; and so are his people and religion. Unlike Kaus or Uria, which have well-established religious systems, formulated rules of coexistence and even names for their religions, there is almost no writing on the beliefs of the inhabitants of Nidheim. Everything we know is passed on through songs and stories. </p>
         <p align = "justify"> They are known to believe that there are two divine dragons competing. The lord of cold and the lady of heat; The lord of cold is a terrible silver dragon that is apparently getting the better of it; while the lady of heat is a golden dragon and favorable to humans. In addition to the dragon gods, there are a lot of magical creatures in their folklore, some of which are responsible for creating and maintaining life and death. </p>
         <p align = "justify"> Below, I will report some of the tales that help to situate your beliefs a little better. These are some old songs translated directly from nidstil, the nidleben language. </p>
         
-        <img src = "/uploads/logopenumbra.png" class = "rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
+        <img src = "/uploads/logopenumbra.png" class = "muted rounded mx-auto d-block mb-1" alt = "Responsive image" width = "100">
     
         <h4 align = "center"> <text class = "text-nidheim">Nidheim:</text> Political System </h4>
         <p align = "justify"> In Nidheim, there are no governors. There are only 3 positions you can be in: civilian, slave and priest. Note that the civilian is not the opposite of the military, but of the slave. The priest lives on donations from the people himself - even receiving slaves -, and intermediates contact with Lady of Heat, holds festivals on commemorative days, funerals for those who die outside the battlefield, and so on. </p>
-    </div>
+    </section>
+    <%- include ("../partials/scripts.ejs")%>
 </body>
-
 <%- include ("../partials/footer.ejs") %>

@@ -1,146 +1,158 @@
 <%- include ("../partials/header.ejs") %>
-<%- include ("../partials/engnavbar.ejs") %>
-<body class="body">
-      <!-- Page Content -->
-      <div class="container cb mt-4 mb-4">
+<body>
+  <header>
+    <%- include ("../partials/ennavbar.ejs") %>
+  </header>
+    <%- include ("../partials/alert.ejs") %>
+  <section id="banner">
+    <div class="container column">
+        <div class="banner_headline"></div>
+        <div class="banner_options">
+            <div class="banner1">
+              <a href="/en/<%= news[0].slug%>">
+                <div class="banner_title"><%= news[0].title %></div>
+              </a>
+            </div>
+            <div class="banner2">
+              <a href="/en/<%= news[1].slug%>">
+                <div class="banner_title"><%= news[1].title %></div>
+              </a>
+            </div>
+            <div class="banner3">
+              <a href="/en/<%= news[2].slug%>">
+                <div class="banner_title"><%= news[2].title %></div>
+              </a>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container flexWrap">
+        <div class="widget">
+            <div class="widget_title">
+                <div class="widget_title_text">
+                    Fight!
+                </div>
+                <div class="widget_title_bar"></div>
+            </div>
+            <div class="widget_title_body">
+              <p>Take on other players in the vast world of Vernesis, demonstrate your skills in exciting and challenging battles.</p>
+              <p>Join or create a guild, work your reputation and take on other guilds to earn your place in Vernesis.</p>
+              <p>Explore dangerous territories in search of treasure, facing the diverse creatures that inhabit this universe!</p>
+            </div>
+        </div>
+
+        <div class="widget">
+            <div class="widget_title">
+                <div class="widget_title_text">
+                    Unlock!
+                </div>
+                <div class="widget_title_bar"></div>
+            </div>
+            <div class="widget_title_body">
+              <p>Venture into this world rich in tales, stories and incredible dangers.</p>
+              <p>Face the dangerous dungeons and conquer your secrets after exciting challenges.</p>
+              <p>Earn your reputation and unlock the secrets hidden for a long time.</p>
+            </div>
+        </div>
+
+        <div class="widget">
+            <div class="widget_title">
+                <div class="widget_title_text">
+                    Dominate!
+                </div>
+                <div class="widget_title_bar"></div>
+            </div>
+            <div class="widget_title_body">
+                <p>Conquer stellar powers to gain mastery over your abilities. Get the power of nature's elements, constellations and more.</p>
+                <p>Find the combination of equipment and skills that best fits your fighting profile and obliterate your enemies!</p>
+            </div>
+        </div>
+
+        <div class="widget">
+            <div class="widget_title">
+                <div class="widget_title_text">
+                    Customize!
+                </div>
+                <div class="widget_title_bar"></div>
+            </div>
+            <div class="widget_title_body">
+                <p>Feel free to enjoy all kinds of powers, you will not be stuck with your choices. You will be free to change when you wish, you will be the one to use.</p>
+                <p>Explore customization possibilities in features and clothing. It is important to look fabulous!</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="resumes">
+    <div class="container column">
+        <div class="division">
+            <img src="/uploads/logopenumbra.png" class="muted" alt="" height="80px"/>
+        </div>
+
+        <div class="column">
+            <div class="intro">
+                <p>Vernesis Online is a game for RPG players who enjoy new challenges and good stories. Vernesis is a 2D sandbox MMORPG that embraces players who enjoy historical, systematic and visual content as opposed to traditional games with stuck gameplay and difference based on levels. Vernesis provides an immersive world where skilled players are able to change the whole story to their advantage.</p>
+            </div>
+
+            <div class="flexWrap">
+                <div class="card" style="background-color: rgb(194, 45, 45);">
+                    <div class="card_title">
+                      Supernatural Creatures
+                    </div>
+                    <div class="card_body">
+                      From simple zombies to dragons, the Vernesis bestiary is filled with incredible creatures and completely divergent levels of danger. Some can be found easily wandering around the world of Vernesis, while others... only when a star comes into the world, bringing with it its amazing mysteries.
+                    </div>
+                </div>
     
-        <h1 class="my-4" align="center">Welcome to Vernesis Online!</h1>
-        <h5  align="center">Follow our news:</h2>
-
-          <div id="carouselNews" class="carousel slide carousel-fade mb-4" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselNews" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselNews" data-slide-to="1"></li>
-              <li data-target="#carouselNews" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-              <div class="carousel-item active">
-                <a href="/en/<%= news[0].slug%>">
-                  <img src="<%= news[0].link_img %>" class="img-fluid rounded news">
-                </a>
-                <div class="carousel-caption d-none d-md-block">
-                  <p class="white outline"><%= news[0].title %></p>
+                <div class="card" style="background-color: rgb(80, 194, 45);">
+                    <div class="card_title">
+                      Urianos
+                    </div>
+                    <div class="card_body">
+                      Surrounded by large, imposing and, at the same time, welcoming walls, the kingdom of Uria is seen as the great herald of hope. As a society that often represents justice for the weak and oppressed, its soldiers are always willing to fight for what seems right in the face of their ideals.
+                    </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <a href="/en/<%= news[1].slug%>">
-                  <img src="<%= news[1].link_img %>" class="img-fluid rounded news">
-                </a>
-                <div class="carousel-caption d-none d-md-block">
-                  <p class="white outline"><%= news[1].title %></p>
+
+                <div class="card" style="background-color: rgb(57, 221, 226);">
+                    <div class="card_title">
+                      Nidlebens
+                    </div>
+                    <div class="card_body">
+                      In the midst of the icy plains and tundras, there is a civilization that, following the pure meaning of strength and survival, is able to sustain itself. The Nidheim tribe is characterized by the value of power and, by many, its members are seen as barbarians who care nothing about conflict and conquest.
+                    </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <a href="/en/<%= news[2].slug%>">
-                  <img src="<%= news[2].link_img %>" class="img-fluid rounded news">
-                </a>
-                <div class="carousel-caption d-none d-md-block">
-                  <p class="white outline"><%= news[2].title %></p>
+
+                <div class="card" style="background-color: rgb(228, 155, 47);">
+                    <div class="card_title">
+                      Kaoenses
+                    </div>
+                    <div class="card_body">
+                      The power of the stars is, without a shadow of a doubt, a divine gift. Without another suitable explanation, it becomes evident that the gods, after so many millennia, finally recognized the merits of men and were willing to go against them. Any act less than profound gratitude is blasphemy and Kaus's theocracy will use, without scruples, the gifts bestowed on humanity by the gods, which is his own presence.
+                    </div>
                 </div>
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselNews" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselNews" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-    
-        <!-- Marketing Icons Section -->
-        <div class="row">
-          <div class="col-lg-6 mb-4">
-            <div class="card h-100">
-              <h4 class="card-header" align="center">Fight!</h4>
-              <div class="card-body">
-                <p class="card-text" align="justify">Take on other players in the vast world of Vernesis, demonstrate your skills in exciting and challenging battles. <br> <br>
 
-                  Join or create a guild, work your reputation and take on other guilds to earn your place in Vernesis. <br> <br>
+                <div class="card" style="background-color: rgb(42, 112, 218);">
+                    <div class="card_title">
+                      Silverwater People
+                    </div>
+                    <div class="card_body">
+                      The world is a cruel place and, as a consequence, it is necessary that not only the individual, but the whole society adapts to it and takes action accordingly. In Silverwater Bay, there are no means that cannot be justified by the ends, and as a consequence, morality is an entirely subjective concept. Survival and success are better than honor and loyalty.
+                    </div>
+                </div>
 
-                  Explore dangerous territories in search of treasure, facing the diverse creatures that inhabit this universe!</p>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="btn btn-vernesis btn-block disabled">Read more...</a>
-              </div>
+                <div class="card" style="background-color: rgb(44, 226, 105);">
+                    <div class="card_title">
+                      Nohitas
+                    </div>
+                    <div class="card_body">
+                      In the face of all the chaos of the stars, it is evident that the ancient laws are beginning to collapse. Nature no longer behaves in the same way and Stars are used recklessly, putting the world itself at risk. In the midst of this chaos, the village of Noh rises bravely, positioning itself in favor of balance. The power that reaches the land is certainly, a risk, and therefore guardians are needed to keep the balance on an equal footing.
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-lg-6 mb-4">
-            <div class="card h-100">
-              <h4 class="card-header" align="center">Dominate!</h4>
-              <div class="card-body">
-                <p class="card-text" align="justify">Conquer stellar powers to gain mastery over your abilities. Get the power of nature's elements, constellations and more. <br> <br>
-
-                  Find the combination of equipment and skills that best fits your fighting profile and obliterate your enemies!</p>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="btn btn-vernesis btn-block disabled">Read more...</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 mb-4">
-            <div class="card h-100">
-              <h4 class="card-header" align="center">Unlock!</h4>
-              <div class="card-body">
-                <p class="card-text" align="justify">Venture into this world rich in tales, stories and incredible dangers. <br> <br>
-
-                  Face the dangerous dungeons and conquer your secrets after exciting challenges. <br> <br>
-                  
-                  Earn your reputation and unlock the secrets hidden for a long time.</p>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="btn btn-vernesis btn-block disabled">Read more...</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 mb-4">
-            <div class="card h-100">
-              <h4 class="card-header" align="center">Customize!</h4>
-              <div class="card-body">
-                <p class="card-text" align="justify">Feel free to enjoy all kinds of powers, you will not be stuck with your choices. You will be free to change when you wish, you will be the one to use. <br> <br>
-
-                  Explore customization possibilities in features and clothing. It is important to look fabulous!</p>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="btn btn-vernesis btn-block disabled">Read more...</a>
-              </div>
-            </div>
-          </div>
         </div>
-        <!-- /.row -->
-        <div class="container">
-          <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block" alt="Responsive image" width="100">
-          <p class="text-muted" align="center">​Vernesis Online is a game for RPG players who enjoy new challenges and good stories. Vernesis is a 2D sandbox MMORPG that embraces players who enjoy historical, systematic and visual content as opposed to traditional games with stuck gameplay and difference based on levels. Vernesis provides an immersive world where skilled players are able to change the whole story to their advantage.</p>
-          <hr>
-        </div>
-        <h1 align="center">​A challenging and incredible world!</h1>
-        <div class="container block-creatures mb-1">
-          <p align="center"><b>Supernatural Creatures:</b> from simple zombies to dragons, the Vernesis bestiary is filled with incredible creatures and completely divergent levels of danger. Some can be found easily wandering around the world of Vernesis, while others... only when a star comes into the world, bringing with it its amazing mysteries.</p>
-        </div>
-        <a href="/en/uria" class="text-decoration-none"><div class="container block-urianos mb-1">
-          <p align="center"><b>Urianos:</b> Surrounded by large, imposing and, at the same time, welcoming walls, the kingdom of Uria is seen as the great herald of hope. As a society that often represents justice for the weak and oppressed, its soldiers are always willing to fight for what seems right in the face of their ideals.</p>
-        </div></a>
-        <a href="/en/nidheim" class="text-decoration-none"><div class="container block-nidlebens mb-1">
-          <p align="center"><b>Nidlebens:</b> In the midst of the icy plains and tundras, there is a civilization that, following the pure meaning of strength and survival, is able to sustain itself. The Nidheim tribe is characterized by the value of power and, by many, its members are seen as barbarians who care nothing about conflict and conquest.</p>
-        </div></a>
-        <a href="/en/kaus" class="text-decoration-none"><div class="container block-kaoenses mb-1">
-          <p align="center"><b>Kaoenses: </b> The power of the stars is, without a shadow of a doubt, a divine gift. Without another suitable explanation, it becomes evident that the gods, after so many millennia, finally recognized the merits of men and were willing to go against them. Any act less than profound gratitude is blasphemy and Kaus's theocracy will use, without scruples, the gifts bestowed on humanity by the gods, which is his own presence.</p>
-        </div></a>
-        <a href="/en/noh" class="text-decoration-none"><div class="container block-nohitas mb-1">
-          <p align="center"><b>Nohitas:</b> In the face of all the chaos of the stars, it is evident that the ancient laws are beginning to collapse. Nature no longer behaves in the same way and Stars are used recklessly, putting the world itself at risk. In the midst of this chaos, the village of Noh rises bravely, positioning itself in favor of balance. The power that reaches the land is certainly, a risk, and therefore guardians are needed to keep the balance on an equal footing.</p>
-        </div></a>
-        <a href="/en/silverwater" class="text-decoration-none"><div class="container block-silverwater mb-1">
-          <p align="center"><b>Silverwater People:</b> The world is a cruel place and, as a consequence, it is necessary that not only the individual, but the whole society adapts to it and takes action accordingly. In Silverwater Bay, there are no means that cannot be justified by the ends, and as a consequence, morality is an entirely subjective concept. Survival and success are better than honor and loyalty.</p>
-        </div></a>
-        <div class="container">
-          <img src = "/uploads/logopenumbra.png" class="rounded mx-auto d-block" alt="Responsive image" width="100">
-          <img src ="/uploads/ENGAvisoPNG.png" class="img-fluid rounded mx-auto d-block mb-4 mt-2" alt="Responsive image" width="50%">
-        </div>
-      </div>
-
-      
-      <!-- /.container -->
-
+  </section>
+  <%- include ("../partials/scripts.ejs") %>
 </body>
 <%- include ("../partials/footer.ejs") %>
