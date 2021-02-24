@@ -31,16 +31,18 @@
   <ul class="pagination justify-content-center mb-4">
     <% if (result.page != 1){ %>
       <li class="page-item">
-        <a class="page-link" href="/en/<%= result.articles[0].category_id.slug_en %>/<%=result.page-1%>">&larr; Recentes</a>
+        <a class="page-link" href="/en/<%= result.articles[0].category_id.slug_en %>/<%= parseInt(result.page) - 1%>">&larr; Recentes</a>
       </li>
     <%}%>
 
     <% if (result.next){ %>
       <li class="page-item">
-        <a class="page-link" href="/en/<%= result.articles[0].category_id.slug_en %>/<%=result.page+1%>">Antigos &rarr;</a>
+        <a class="page-link" href="/en/<%= result.articles[0].category_id.slug_en %>/<%= parseInt(result.page) + 1 %>">Antigos &rarr;</a>
       </li>
     <%}%>
   </ul>
+
+
   <%- include ("../partials/scripts.ejs")%>
 </body>
 

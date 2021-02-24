@@ -71,35 +71,41 @@ class ArticleController{
 
     async findPtArticles(req, res){
         try{
-            var page = req.params.num
+            var {num} = req.params
         
             var offset
-            if (isNaN(page) || page == 1){
+            if (isNaN(num) || num == 1){
                 offset = 0
             }else{
                 offset = (parseInt(num) -1) * 9
             }
-    
-            await database.Article.find({lang: "pt"}).populate("category_id").sort({_id: -1}).limit(6).skip(offset).then(async (articles)  => {
+
+            await database.Article.find({lang: "pt"}).populate("category_id")
+            .sort({_id: -1})
+            .then(async (articles)  => {
                 var next
 
-                if (offset + 9 >= articles.length){
+                var filterArticles = []
+                var showArticles = []
+
+                await articles.map((article, index) => {
+                    if (article.category_id.slug_pt == req.params.category){
+                        filterArticles.push(article);
+                        if (index >= offset && showArticles.length <= 9)
+                            showArticles.push(article)
+                    }
+                })
+
+                if (offset + 9 >= filterArticles.length){
                     next = false
                 }else{
                     next = true
                 }
 
-                var filterArticles = []
-                await articles.forEach(article => {
-                    if (article.category_id.slug_pt == req.params.category){
-                        filterArticles.push(article)
-                    }
-                })
-
                 var result = {
                     next: next,
-                    articles: filterArticles,
-                    page: page
+                    articles: showArticles,
+                    page: num
                 }
 
                 var categories = await CategoryController.findCategories("pt")
@@ -121,35 +127,41 @@ class ArticleController{
 
     async findEnArticles(req, res){
         try{
-            var page = req.params.num
+            var {num} = req.params
         
             var offset
-            if (isNaN(page) || page == 1){
+            if (isNaN(num) || num == 1){
                 offset = 0
             }else{
                 offset = (parseInt(num) - 1) * 9
             }
     
-            await database.Article.find({lang: "en"}).populate("category_id").sort({_id: -1}).limit(6).skip(offset).then(async (articles)  => {
+            await database.Article.find({lang: "en"}).populate("category_id")
+            .sort({_id: -1})
+            .then(async (articles)  => {
                 var next
 
-                if (offset + 9 >= articles.length){
+                var filterArticles = []
+                var showArticles = []
+
+                await articles.map((article, index) => {
+                    if (article.category_id.slug_en == req.params.category){
+                        filterArticles.push(article);
+                        if (index >= offset && showArticles.length <= 9)
+                            showArticles.push(article)
+                    }
+                })
+
+                if (offset + 9 >= filterArticles.length){
                     next = false
                 }else{
                     next = true
                 }
 
-                var filterArticles = []
-                await articles.forEach(article => {
-                    if (article.category_id.slug_en == req.params.category){
-                        filterArticles.push(article)
-                    }
-                })
-
                 var result = {
                     next: next,
-                    articles: filterArticles,
-                    page: page
+                    articles: showArticles,
+                    page: num
                 }
 
                 var categories = await CategoryController.findCategories("en")
@@ -220,7 +232,8 @@ class ArticleController{
 
     async getPtArticle(req, res){
         var categories = await CategoryController.findCategories("pt")
-        var article = await database.Article.findOne({slug: req.params.article}).populate("category_id")
+        var article = await database.Article.findOne({slug: req.params.article})
+        .populate("category_id")
         if (article){
             res.render("pt/article", {article: article, categories: categories})
         }else{
@@ -230,7 +243,8 @@ class ArticleController{
 
     async getEnArticle(req, res){
         var categories = await CategoryController.findCategories("en")
-        var article = await database.Article.findOne({slug: req.params.article}).populate("category_id")
+        var article = await database.Article.findOne({slug: req.params.article})
+        .populate("category_id")
         if (article){
             res.render("eng/article", {article: article, categories: categories})
         }else{
@@ -239,7 +253,10 @@ class ArticleController{
     }
 
     async getNewsArticle(lang){
-        return await database.Article.find({lang: lang}).populate("category_id").sort({_id: -1}).limit(3)
+        return await database.Article.find({lang: lang})
+        .populate("category_id")
+        .sort({_id: -1})
+        .limit(3)
     }
 }
 
